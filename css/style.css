@@ -375,83 +375,83 @@ body{
 @keyframes slide {
 	0%
 	{
-		background-image: url('cranes1.jpg');
+		background-image: url('../images/cranes1.jpg');
 	}
 	10%
 	{
-		background-image: url('cranes1.jpg');
+		background-image: url('../images/cranes1.jpg');
 	}
 	10.01%
 	{
-		background-image: url('dp1.jpg');
+		background-image: url('../images/dp1.jpg');
 	}
 	20%
 	{
-		background-image: url('dp1.jpg');
+		background-image: url('../images/dp1.jpg');
 	}
 	20.01%
 	{
-		background-image: url('drillm.jpg');
+		background-image: url('../images/drillm.jpg');
 	}
 	30%
 	{
-		background-image: url('drillm.jpg');
+		background-image: url('../images/drillm.jpg');
 	}
 	30.01%
 	{
-		background-image: url('ed1.jpg');
+		background-image: url('../images/ed1.jpg');
 	}
 	40%
 	{
-		background-image: url('ed1.jpg');
+		background-image: url('../images/ed1.jpg');
 	}
 	40.01%
 	{
-		background-image: url('gears.jpg');
+		background-image: url('../images/gears.jpg');
 	}
 	50%
 	{
-		background-image: url('gears.jpg');
+		background-image: url('../images/gears.jpg');
 	}
 	50.01%
 	{
-		background-image: url('machinee.jpg');
+		background-image: url('../images/machinee.jpg');
 	}
 	60%
 	{
-		background-image: url('machinee.jpg');
+		background-image: url('../images/machinee.jpg');
 	}
 	60.01%
 	{
-		background-image: url('plodder.jpg');
+		background-image: url('../images/plodder.jpg');
 	}
 	70%
 	{
-		background-image: url('plodder.jpg');
+		background-image: url('../images/plodder.jpg');
 	}
 	70.01%
 	{
-		background-image: url('soapbars.jpg');
+		background-image: url('../images/soapbars.jpg');
 	}
 	80%
 	{
-		background-image: url('soapbars.jpg');
+		background-image: url('../images/soapbars.jpg');
 	}
 	80.01%
 	{
-		background-image: url('soapnoddle.jpg');
+		background-image: url('../images/soapnoddle.jpg');
 	}
 	90%
 	{
-		background-image: url('soapnoddle.jpg');
+		background-image: url('../images/soapnoddle.jpg');
 	}
 	90.01%
 	{
-		background-image: url('spm.jpg');
+		background-image: url('../images/spm.jpg');
 	}
 	100%
 	{
-		background-image: url('spm.jpg');
+		background-image: url('../images/spm.jpg');
 	}
 
 

@@ -8,7 +8,7 @@
   }
   
   body {
-    background: url("loginadminbg.gif");
+    background: url("../images/loginadminbg.gif");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
