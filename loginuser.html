@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="loginusercss.css" />
+    <script src="loginuserjs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <body>
+      <div class="cotn_principal">
+    <div class="cont_centrar">
+    
+      <div class="cont_login">
+    <div class="cont_info_log_sign_up">
+          <div class="col_md_login">
+    <div class="cont_ba_opcitiy">
+            
+            <h2>LOGIN</h2>  
+      <p style="color: black;"><b>Already have and account? Just log in  Great deals are awaited!</b></p> 
+      <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+      </div>
+      </div>
+    <div class="col_md_sign_up">
+    <div class="cont_ba_opcitiy">
+      <h2>SIGN UP</h2>
+    
+      
+      <p style="color: black;"><b>Don't have an account yet? Don't worry just Sign up!</b></p>
+    
+      <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+    </div>
+      </div>
+           </div>
+    
+        
+        <div class="cont_back_info">
+           <div class="cont_img_back_grey">
+           <img src="machine.jpeg" alt="" />
+           </div>
+           
+        </div>
+    <div class="cont_forms" >
+        <div class="cont_img_back_">
+           <img src="machine2.jpg" alt="" />
+           </div>
+     <div class="cont_form_login">
+    <a href="#" onclick="ocultar_login_sign_up()" style="color: white;"><i class="material-icons">&#xE5C4;</i></a>
+       <h2 style="color: white;">LOGIN</h2>
+       <form name="myform" method="get" onsubmit="return validateform()">
+     <input type="text" class="input-login" placeholder="Company email" required />
+     <br>
+    <input type="password" class="input-password" name="pass1" placeholder="Password" />
+    <input type="submit" class="btn_login" name="submit" value="Login"  onclick="cambiar_login()">
+        </form>
+      </div>
+      
+       <div class="cont_form_sign_up">
+    <a href="#" onclick="ocultar_login_sign_up()" style="color: white;"><i class="material-icons">&#xE5C4;</i></a>
+         <h2 style="color: white;">SIGN UP</h2>
+         <form name="myform2" method="get" onsubmit="return validateform2()">
+    <input type="text" class="input-login" name="companyname" placeholder="Company name" />
+    <input type="text" class="input-login" name="companybranch" placeholder="Company branch" />
+    <input type="text" class="input-login" placeholder="Company email" required />
+    <input type="password" class="input-password" name="pass2" placeholder="Password" />
+    <input type="submit" class="btn_login" name="submit2" value="Sign up"  onclick="cambiar_sign_up()">
+    </form>
+      </div>
+    
+        </div>
+        
+      </div>
+     </div>
+    </div>
+    </body>
+</body>
+</html>    
