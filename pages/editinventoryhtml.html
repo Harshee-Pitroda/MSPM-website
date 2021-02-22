@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../css/editinventorycss.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+        
+    </style>
+</head>
+
+<!-- head - Googlefonts link -->
+
+<div id="outside">
+<form id="survey-form" action="/my-handling-form-page" method="post">
+  <h1 id="title">Edit The Inventory</h1>
+  
+  
+  <!-- ------------------Personal Details---------------------------- -->
+  <fieldset>
+    <legend>Product Details</legend>
+    <div>
+      <label id="name-label" for="name">Product Name:</label>
+      <input type="text" required id="name" name="user_name" placeholder="Enter product name here">   </div>
+    
+<br>
+      <div>
+        <label id="name-label" for="name">Product Number:</label>
+        <input type="text" required id="name" name="user_name" placeholder="Enter product number here">   </div>
+
+      
+ 
+  <!-- -----------------Dropdown menus--------------------------------- -->
+  
+  <fieldset>
+    <div>
+      <label for="politics">Number of products present</label>
+      <select id="dropdown">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  </select>
+<br>
+<br>
+
+    <legend>Note:</legend>
+    
+      <label for="msg">Side Note Space:</label><br>
+      <textarea id="msg2" name="user_message" rows="4" cols="50" placeholder="Enter Text Here"></textarea>   </div>
+    <p>Upload picture of product if needed:
+      <button>Attach Files</button></p>
+  </fieldset>
+
+  <div id="submitbutton">
+    <button type="submit" id="submit">Edit The Inventory</button>   </div>
+
+</form>
+
+  </div>
+ 
+  </html>
