@@ -50,12 +50,6 @@ h1:hover{
 
 a {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: -629px;
-    left: 1376px;
     right: 0;
     bottom: 0;
     margin: auto;
@@ -74,6 +68,7 @@ a {
     line-height: 250%;
     font-size: larger;
     font-family: 'Reggae One', cursive;
+    margin-bottom: 5px;
   }
   a::before {
     position: absolute;
