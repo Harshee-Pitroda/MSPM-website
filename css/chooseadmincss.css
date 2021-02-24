@@ -10,6 +10,7 @@ body{
     height: 100%;
     width: 100%;
     background-color: #010101;
+    overflow-x: hidden;
 }
 
 img {
@@ -48,8 +49,18 @@ h1:hover{
     font-family: 'Permanent Marker', cursive;
 }
 
-a {
+a{
+  color:rgb(216, 32, 216);
+}
+
+.logout {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -629px;
+    left: 1376px;
     right: 0;
     bottom: 0;
     margin: auto;
@@ -68,9 +79,8 @@ a {
     line-height: 250%;
     font-size: larger;
     font-family: 'Reggae One', cursive;
-    margin-bottom: 5px;
   }
-  a::before {
+  .logout::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,9 +98,9 @@ a {
     transition: box-shadow 0.5s ease-out;
     z-index: -1;
   }
-  a:hover {
+  .logout:hover {
     color: rgb(3, 3, 3);
   }
-  a:hover::before {
+  .logout:hover::before {
     box-shadow: inset 0 0 0 10em #ffffff;
   }
