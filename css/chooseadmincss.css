@@ -42,6 +42,9 @@ h1{
 .titleeffect3{
     width: 300px !important;
 }
+.titleeffect4{
+  width: 500px !important;
+}
 h1:hover{
     transform: scale(1.1);
     color: black;
