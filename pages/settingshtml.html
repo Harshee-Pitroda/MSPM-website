@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+
+<title>Settings</title>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<style>
+   body{
+    overflow-x: hidden;
+    background-image: url('../images/settingback.png');
+    background-size: cover;
+}
+
+.container{
+    background: #fff;
+    width:540px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 4%;
+    box-shadow: 2px 5px 20px;
+    /*rgba(119,119,119,0.5);*/
+}
+
+.leftbox{
+    float: left;
+    top: -5%;
+    left:5%;
+    position: absolute;
+    width: 15%;
+    height: 110%;
+    background: #2ed573;
+    box-shadow: 3px 3px 10px;
+    /*rgba(119,119,119,0.5);*/
+    border: lem solid #fff;    
+}
+
+nav a{
+    list-style: none;
+    padding: 35px;
+    color: #fff;
+    font-size: 1.lem;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    margin-top: 150px;
+}
+
+nav a:hover{
+    /*color: #10ac84;*/
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+nav a:first-child{
+    margin-top: 7px;
+}
+
+/*nav a.active{
+    color: #10ac84;
+}*/
+
+.rightbox{
+    width: 60%;
+    margin-left: 27%;
+}
+
+/*.tabShow{
+    transition: all 0.5s ease-in;
+    width: 80%;
+}*/
+
+h1{
+    font-family: cursive, sans-serif;
+    color: #73d386;
+    font-size: 1.2;
+    margin-top: 34px;
+    margin-bottom: 35px;
+}
+
+.input, p{
+    border: 0;
+    border-bottom: 1px solid #3fb6a8;
+    width: 80%;
+    font-family: cursive, sans-serif;
+    font-size: 0.7em;
+    padding: 7px 0;
+    color: #070707;
+    outline: none;
+}
+
+.btn{
+    font-family: fantasy, sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    border: 0;
+    color: white;
+    background: #7ed386;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 8px;
+    /*rgba(0,0,0,0.2);*/
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<a href="../pages/chooseadmin.html"><img src="../images/cranes1.jpg" title="Home" alt="" id="icon" style=" height: 50px;width: 50px;margin: 10px;"></a>
+<a href="userlogin.php"><img src="https://cdn2.iconfinder.com/data/icons/android-12/512/logout_signout-512.png" alt="" id="icon" style=" height: 50px;width: 50px;margin: 10px; position:absolute;right:10px" title="Logout"></a>
+<div class="container">
+    <div class="leftbox">
+        <nav>
+            <a onclick="tabs(0)" class="tab active" >
+            <i class="fa fa-password"></i>
+            <ion-icon name="person-outline"></ion-icon>
+            </a>
+           
+            <a onclick="tabs(1)" class="tab" >
+            <i class="fa fa-mode"></i>
+            <ion-icon name="settings-outline"></ion-icon>
+            </a>
+           
+            <a onclick="tabs(2)" class="tab" >
+            <i class="fa fa-mail"></i>
+            <ion-icon name="mail-outline"></ion-icon>
+            </a>
+           
+        </nav>
+   
+    </div>
+    <script>
+    function change(){
+        document.getElementById("s").value = localStorage.getItem("sapid");
+        }
+    </script>
+    <div class="rightbox">
+       <br><br><br><br><br><br>
+    <div class="pass">
+    <h1>Change password</h1>  
+        <form action="changepassword.php" method="GET">
+         <input type="text" id="s" name="s" style="color:transparent;border:0;width:0px;height:0px">
+         <input type="password" class="input" value="" id="cpass" name="cpass" placeholder="Enter Current Password">
+         <input type="password" class="input" value="" id="pass" name="pass" placeholder="Enter New Password"><br><br>
+        <input type="submit" class="btn" id="btn" name="btn" value="Update" onclick="change()">
+        </form>
+        <?php   If(isset($_GET['success']) && $_GET['success'] == 1){ ?>
+        <h3 style="color: green;">*YOUR PASSWORD IS UPDATED*</h3> 
+<?php } ?>
+<?php   If(isset($_GET['success']) && $_GET['success'] == 0){ ?>
+        <h3 style="color: red;">*ENTERED CURRENT PASSWORD IS WRONG*</h3> 
+<?php } ?>
+    </div>
+    </div>
+</div>
+
+</body>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+</html>
