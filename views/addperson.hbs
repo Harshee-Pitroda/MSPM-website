@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add authority</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/addpersoncss.css">
+    </head>
+    <body>
+      <div class="row">
+    <div class="col-md-12">
+      <form action="/auth/addperson" method="post">
+        <h1 style="color: white;"> ADD AN AUTHORITY </h1>
+        
+        <fieldset>
+          <label for="name" style="color: white;">Name:</label>
+          <input type="text" id="name" name="user_name">
+        
+          <label for="email" style="color: white;">Username:</label>
+          <input type="text" id="mail" name="user_username">
+       
+          <label for="password" style="color: white;">Password:</label>
+          <input type="password" id="password" name="user_password">
+        </fieldset>
+        <button type="submit">ADD</button> 
+       </form>
+        </div>
+      </div>
+      
+    </body>
+</html>

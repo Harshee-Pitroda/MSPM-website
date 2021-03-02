@@ -1,0 +1,129 @@
+body{
+    background: url(/personworkinggif.gif) no-repeat center center fixed;
+    background-size: 100% 100%;
+    font-family: Helvetica,Arial,serif;
+    font-size: 12px;
+    margin: 0 0;
+    padding: 0 0;
+    color: #cfcccd;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
+    background-color: #aa3939;
+    overflow-x: hidden;
+}
+
+img {
+    opacity: 0.9;
+  }
+
+h1{
+    width: 50% !important;
+    margin-left: 400px;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(245, 245, 245);
+    position: relative;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    font-family: 'Reggae One', cursive;
+    transition: transform .4s; 
+}
+
+/* .titleeffect1{
+    width: 479px !important;
+}
+.titleeffect2{
+    width: 550px !important;
+}
+.titleeffect3{
+    width: 300px !important;
+}
+.titleeffect4{
+  width: 500px !important;
+} */
+/* h1:hover{
+    transform: scale(1.1);
+    color: black;
+    background: url('../images/txtbg.jpg');
+    font-family: 'Permanent Marker', cursive;
+} */
+
+h1 a {
+    color: rgb(7, 7, 7);
+    font-size: 1em !important;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: 'Dosis', sans-serif;
+  }
+
+a.effect-shine:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+  }
+  
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
+.logout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -629px;
+    left: 1376px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #f7eff1;
+    border-radius: 8px;
+    height: 2.8em;
+    width: 10em;
+    padding: 0;
+    outline: none;
+    overflow: hidden;
+    color: #302629;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    line-height: 250%;
+    font-size: larger;
+    font-family: 'Reggae One', cursive;
+  }
+  .logout::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    line-height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+  }
+  .logout:hover {
+    color: rgb(3, 3, 3);
+  }
+  .logout:hover::before {
+    box-shadow: inset 0 0 0 10em #ffffff;
+  } 

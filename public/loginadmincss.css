@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 1.5vh;
+  }
+  
+  body {
+    background: url("/loginadminbg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  
+  .container {
+    background: rgb(29, 29, 31);
+    width: 90vh;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    clip-path: circle(50%);
+    will-change: transform, opacity;
+  }
+  
+  .header {
+    font-family: verdana, sans-serif;
+    margin: 1em auto 1.5em;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .header strong {
+    font-size: 1.7em;
+    color: coral;
+  }
+  .container:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 70vh;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 0.6em solid white;
+    z-index: 2;
+    background: #303038;
+  }
+  
+  .form {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+  }
+  
+  .input-login,
+  .input-password {
+    font-size: 1rem;
+    display: block;
+    margin: 1em auto;
+    height: 5em;
+    width: 20em;
+    padding: 0 1em;
+    border: 0.3em solid cornflowerblue;
+    background: white;
+    border-radius: 3px;
+    border-color: white;
+    transition: 0.2s;
+  }
+  
+  .input-login:hover,
+  .input-password:hover,
+  .input-login:focus,
+  .input-password:focus {
+    border-color: coral;
+  }
+  
+  .button-log-in {
+    font-size: 1.19rem;
+    margin: 3em 2em 0;
+    background: coral;
+    border: none;
+    top: 250px;
+    border-radius: 3px;
+    padding: 0.9em 1.8em;
+    transition: 0.2s;
+    color: white;
+    font-weight: 700;
+  }
+  
+  .button-log-in:hover {
+    transform: scale(1.198);
+    background-color: white;
+    color: #333;
+  }
+  
+  .is-clicked {
+    animation: hide 1.5s;
+  }
+  
+  @keyframes hide {
+    15% {
+      transform: translateY(-15%);
+    }
+  
+    50% {
+      transform: translateY(999px);
+      opacity: 0;
+    }
+  }
+  
+  .shape {
+    --color: orange;
+    clip-path: circle(50%);
+    background-color: var(--color);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    animation: fade 8s forwards infinite ease-out;
+    will-change: transform, opacity, background-color;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 1;
+      transform: scale(0);
+    }
+  
+    to {
+      opacity: 0;
+      transform: scale(10);
+    }
+  }
+ 

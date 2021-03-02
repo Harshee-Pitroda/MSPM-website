@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/loginadmincss.css" />
+    <script src="/loginadminjs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+          <h1 class="header">Login to your <strong><br>account <i class="fa fa-unlock-alt" aria-hidden="true"></i></strong></h1>
+          <form name="myform" action="/auth/login" method="get" onsubmit="return validateform()">
+          <input name="username" class="input-login" placeholder="Your username">
+          <input name="password" type="password" class="input-password" placeholder="Your password">
+          <button class="button-log-in" type="button"><a href="../pages/chooseadmin.html" style="color:rgb(255, 255, 255); font-size: large;">Login</a></button>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

@@ -6,8 +6,9 @@
   
   body {
     font-family: 'Nunito', sans-serif;
-    background: url(../images/bgadd.gif) no-repeat center center fixed;
+    background: url(/bgadd.gif) no-repeat center center fixed;
     background-size: 100% 100%;
+    background-color: rgba(86, 95, 230, 0.726);
   }
   
   form {
