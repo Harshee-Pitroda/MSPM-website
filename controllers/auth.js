@@ -41,7 +41,7 @@ exports.adminlogin = async (req,res) => {
                 res.status(401).render('adminlogin1')
             } 
             else{
-                res.render('addperson')
+                res.render('chooseadmin')
             }    
         })
 

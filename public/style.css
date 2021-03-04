@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');  
   
   body {
 	background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 100, color-stop(0%, #474747), color-stop(100%, #0e0e0e));
@@ -369,89 +369,89 @@ body{
 	font-family:"Times New Roman", Times, serif;
 }
 .principal p{
-	font size: 20px;
+	font-size: 20px;
 }
 
 @keyframes slide {
 	0%
 	{
-		background-image: url('../images/cranes1.jpg');
+		background-image: url('/cranes1.jpg');
 	}
 	10%
 	{
-		background-image: url('../images/cranes1.jpg');
+		background-image: url('/cranes1.jpg');
 	}
 	10.01%
 	{
-		background-image: url('../images/dp1.jpg');
+		background-image: url('/dp1.jpg');
 	}
 	20%
 	{
-		background-image: url('../images/dp1.jpg');
+		background-image: url('/dp1.jpg');
 	}
 	20.01%
 	{
-		background-image: url('../images/drillm.jpg');
+		background-image: url('/drillm.jpg');
 	}
 	30%
 	{
-		background-image: url('../images/drillm.jpg');
+		background-image: url('/drillm.jpg');
 	}
 	30.01%
 	{
-		background-image: url('../images/ed1.jpg');
+		background-image: url('/ed1.jpg');
 	}
 	40%
 	{
-		background-image: url('../images/ed1.jpg');
+		background-image: url('/ed1.jpg');
 	}
 	40.01%
 	{
-		background-image: url('../images/gears.jpg');
+		background-image: url('/gears.jpg');
 	}
 	50%
 	{
-		background-image: url('../images/gears.jpg');
+		background-image: url('/gears.jpg');
 	}
 	50.01%
 	{
-		background-image: url('../images/machinee.jpg');
+		background-image: url('/machinee.jpg');
 	}
 	60%
 	{
-		background-image: url('../images/machinee.jpg');
+		background-image: url('/machinee.jpg');
 	}
 	60.01%
 	{
-		background-image: url('../images/plodder.jpg');
+		background-image: url('/plodder.jpg');
 	}
 	70%
 	{
-		background-image: url('../images/plodder.jpg');
+		background-image: url('/plodder.jpg');
 	}
 	70.01%
 	{
-		background-image: url('../images/soapbars.jpg');
+		background-image: url('/soapbars.jpg');
 	}
 	80%
 	{
-		background-image: url('../images/soapbars.jpg');
+		background-image: url('/soapbars.jpg');
 	}
 	80.01%
 	{
-		background-image: url('../images/soapnoddle.jpg');
+		background-image: url('/soapnoddle.jpg');
 	}
 	90%
 	{
-		background-image: url('../images/soapnoddle.jpg');
+		background-image: url('/soapnoddle.jpg');
 	}
 	90.01%
 	{
-		background-image: url('../images/spm.jpg');
+		background-image: url('/spm.jpg');
 	}
 	100%
 	{
-		background-image: url('../images/spm.jpg');
+		background-image: url('/spm.jpg');
 	}
 
 

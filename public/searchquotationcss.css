@@ -27,7 +27,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  background: url("../images/quotation.png") no-repeat center center fixed;
+  background: url("/quotation.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

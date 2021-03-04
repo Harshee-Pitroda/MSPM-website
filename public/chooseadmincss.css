@@ -1,5 +1,5 @@
 body{
-    background: url(../images/personworkinggif.gif) no-repeat center center fixed;
+    background: url(/machgif.gif) no-repeat center center fixed;
     background-size: 100% 100%;
     font-family: Helvetica,Arial,serif;
     font-size: 12px;
@@ -33,7 +33,7 @@ h1{
     transition: transform .4s; 
 }
 
-/* .titleeffect1{
+.titleeffect1{
     width: 479px !important;
 }
 .titleeffect2{
@@ -44,38 +44,18 @@ h1{
 }
 .titleeffect4{
   width: 500px !important;
-} */
-/* h1:hover{
+}
+h1:hover{
     transform: scale(1.1);
     color: black;
-    background: url('../images/txtbg.jpg');
+    background: url('/txtbg.jpg');
     font-family: 'Permanent Marker', cursive;
-} */
+}
 
-h1 a {
-    color: rgb(7, 7, 7);
-    font-size: 1em !important;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    font-family: 'Dosis', sans-serif;
-  }
+a{
+  color:rgb(216, 32, 216);
+}
 
-a.effect-shine:hover {
-    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
-    -webkit-mask-size: 200%;
-    animation: shine 2s infinite;
-  }
-  
-  @-webkit-keyframes shine {
-    from {
-      -webkit-mask-position: 150%;
-    }
-    
-    to {
-      -webkit-mask-position: -50%;
-    }
-  }
 .logout {
     position: absolute;
     top: 0;
@@ -96,7 +76,7 @@ a.effect-shine:hover {
     padding: 0;
     outline: none;
     overflow: hidden;
-    color: #302629;
+    color: #EE3769;
     transition: color 0.3s 0.1s ease-out;
     text-align: center;
     line-height: 250%;
@@ -126,4 +106,4 @@ a.effect-shine:hover {
   }
   .logout:hover::before {
     box-shadow: inset 0 0 0 10em #ffffff;
-  } 
+  }
