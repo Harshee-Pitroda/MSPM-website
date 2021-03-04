@@ -13,5 +13,8 @@ router.get('/adminlogin',(req,res)=>{
     res.render('adminlogin');
 })
 
+router.get('/adminlogin1',(req,res)=>{
+    res.render('adminlogin1');
+})
 
 module.exports = router;

@@ -31,3 +31,41 @@ exports.addperson = async (req,res) => {
         }
     })
 }
+
+exports.adminlogin = async (req,res) => {
+    try{
+        const { a_username , a_password} = req.body;
+        db.query('SELECT * FROM add_authority WHERE a_username = ?',[a_username] , async(error,results)=>{
+            console.log(results);
+            if(!results || !(await bcrypt.compare(a_password, results[0].a_password) ) ){
+                res.status(401).render('adminlogin1')
+            } 
+            else{
+                res.render('addperson')
+            }    
+        })
+
+    } 
+    catch(error){
+        console.log(error);
+    }
+}
+
+exports.adminlogin1 = async (req,res) => {
+    try{
+        const { a_username , a_password} = req.body;
+        db.query('SELECT * FROM add_authority WHERE a_username = ?',[a_username] , async(error,results)=>{
+            console.log(results);
+            if(!results || !(await bcrypt.compare(a_password, results[0].a_password) ) ){
+                res.status(401).render('adminlogin1')
+            } 
+            else{
+                res.render('addperson')
+            }    
+        })
+
+    } 
+    catch(error){
+        console.log(error);
+    }
+} 
