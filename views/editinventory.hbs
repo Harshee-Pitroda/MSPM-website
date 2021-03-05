@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/inventoryformcss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+</head>
+
+
+<body>
+<div id="show_bg">
+  <div class="main">
+   <!-- <img id="title-image" src="https://dwj199mwkel52.cloudfront.net/assets/favicon-2c2100c8c497758008b4271b2be66d5a2182ad8acfdcdde48996dc357e14df54.png">-->
+    <div class="header">
+      <h1 id="title">INVENTORY</h1>
+      <p id="description">
+          EDIT THE INVENTORY RIGHT HERE
+        </p>
+      </div>
+
+     <!-- Form Begin -->
+    <div class="survey-container">
+      <form id="add_inventory" action="/auth/editinventory" method="post">
+
+        <label for="name">Product Name</label>
+        <input type="text" id="p_name" name="p_name" placeholder="E.g. SCREW" required>
+        </br></br>
+
+        <label for="email">Price per piece</label>
+        <input type="number" step="0.01" id="p_price" name="p_price" placeholder="E.g. 10.01" required>
+        </br></br>
+
+        <label for="email">Number of products</label>
+        <input type="number" id="p_noproducts" name="p_noproducts" placeholder="E.g. 10.01" required>
+        </br></br>
+    
+      <label for="dropdown">SIDE NOTE</label>
+      <input type="text" id="p_sidenote" name="p_sidenote" placeholder="E.g. SCREW for xyz machine">
+      </br>
+
+      <button class="button-container" type="submit"><a style="color:rgb(81, 12, 241);">SUBMIT</a></button>
+      </div>
+
+    </form>
+  </div>
+  </div>
+</div>
+</body>
+</html>

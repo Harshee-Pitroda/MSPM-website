@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  overflow-x: hidden !important;
+  margin-bottom: 10px;
+}
+
+input{
+  color: black !important;
+}
+
+#show_bg {
+  background-image: url("https://previews.123rf.com/images/necnec/necnec1701/necnec170100055/70662072-mechanical-engineering-drawing-engineering-drawing-background-vector-illustration-.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.main {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  background-color: rgba(101, 120, 140, 0.7);
+  font-family: Graphik-Regular, Helvetica, Serif;
+}
+
+.header {
+  display: block;
+  text-align: center;
+}
+
+#title {
+  color: white;
+  font-size: 45px;
+}
+
+#title-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 20px 0 0 20px;
+}
+
+
+#description {
+  color: white;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.survey-container {
+  display: flex;
+  justify-content: center;
+}
+
+#add_inventory {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  padding: 50px;
+  border-radius: 50px;
+  background-color: rgba(11, 29, 81, 0.8);
+  color: rgb(247, 247, 247);
+  font-size: 25px;
+}
+
+
+#name, 
+#email,  
+#years-programming,
+#dropdown {
+  color: black;
+  width: 95%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#radio-id {
+  background-color: rgb(15, 29, 81);
+  padding: 10px;
+  width: 60%;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.radio-selections {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 0.5px solid white;
+}
+
+#checkbox-title {
+  background-color: rgb(15, 29, 81);
+  padding: 10px;
+  width: 50%;
+}
+
+.checkbox-label input {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label .checkbox-custom {
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    /* display inline-block needed so that we can set the width */
+    height: 30px;
+    width: 30px;
+}
+
+.checkbox-label .checkbox-custom::after {
+    content: "âœ”ï¸";
+    opacity: 0;
+}
+
+
+/* Checked state - chages the box */
+.checkbox-label input:checked ~.checkbox-custom {
+    background-color: white;
+}
+
+
+/* Checked state - changes the check */
+.checkbox-label input:checked ~.checkbox-custom::after {
+    opacity: 1;
+}
+
+
+#textarea {
+  width: 95%;
+  max-width: 95%;
+  height: 200px;
+  display: flex;
+  align-self: center;
+  padding: 5px;
+  color: black;
+  border-radius: 4px;
+  font-family: Graphik-Regular, Helvetica, Serif;
+  font-size: 20px;
+  margin-left: -40px;
+}
+
+.button-container {
+  margin: auto;
+}
+
+#submit {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: salmon;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  font-family: Raleway, Helvetica, Serif;
+}
+
+@media (max-width: 900px) {
+  #add_inventory {
+  width: 700px;
+  font-size: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  #add_inventory {
+    width: 95vw;
+  }
+  
+  #checkbox-title {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  #add_inventory {
+    width: 95vw;
+  }
+  #checkbox-title {
+    width: 80%;
+  }
+}

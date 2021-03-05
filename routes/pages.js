@@ -53,6 +53,9 @@ router.get('/chooseuser',(req,res)=>{
     res.render('chooseuser');
 })
 
+router.get('/editinventory',(req,res)=>{
+    res.render('editinventory');
+})
 
 router.get('/addperson',(req,res)=>{
     res.render('addperson');

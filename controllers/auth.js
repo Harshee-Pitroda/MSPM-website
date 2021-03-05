@@ -129,3 +129,21 @@ exports.userlogin1 = async (req,res) => {
         console.log(error);
     }
 }
+
+exports.editinventory = async (req,res) => {
+    console.log(req.body);
+    res.send("PRODUCT DETAILS ADDED");
+    const p_name = req.body.p_name;
+    const p_price = req.body.p_price;
+    const p_noproducts = req.body.p_noproducts;
+    const p_sidenote = req.body.p_sidenote;
+
+    db.query('INSERT INTO inventorydetails SET ? ',  { p_name:p_name,p_price:p_price,p_noproducts:p_noproducts,p_sidenote:p_sidenote,p_totalprice:(p_noproducts*p_price)},(error,results) =>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log(results);
+        }
+    })
+}
