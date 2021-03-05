@@ -37,8 +37,16 @@ router.get('/searchaquotation',(req,res)=>{
     res.render('searchaquotation');
 })
 
-router.get('/userloginsignin',(req,res)=>{
-    res.render('userloginsignin');
+router.get('/userlogin',(req,res)=>{
+    res.render('userlogin');
+})
+
+router.get('/userlogin1',(req,res)=>{
+    res.render('userlogin1');
+})
+
+router.get('/usersignin',(req,res)=>{
+    res.render('usersignin');
 })
 
 router.get('/chooseuser',(req,res)=>{

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>User Login</title>
+        <link rel="stylesheet" href="/loginucss.css" />
+        <script src="/loginujs.js"></script>
+
+    </head>
+
+
+<div id="particles-js">
+</div>
+    <section>
+        <div class="card">
+            <div class="container">
+                <form name="myformuser" method="POST"  action="/auth/userlogin" onsubmit="return validateform()">
+            <ul class="email-input-list">
+                <li class="label">Company Name</li>
+                <li><input class="email-input" type="text" name="u_companyname" id="u_companyname" placeholder="name of company" required></li>
+            </ul>
+            <ul class="email-input-list">
+                <li class="label">Email</li>
+                <li><input class="email-input" type="text" name="u_companyemail" id="u_companyemail" placeholder="name@email.com" required></li>
+            </ul>
+            <ul>
+                <li class="label">Password</li>
+                <li><input class="email-input" type="password" name="u_companypassword" id="u_companypassword" placeholder="******" required></li>
+            </ul>
+         
+            <button class="login-btn" type="submit">Login</button>
+            <h2 class="label">Don't have an account ? Create one</h2>
+            <button class="login-btn" type="submit"><a href="/usersignin" style="color: white;">Sign In</a></button>
+
+            </form>
+            </div>
+        </div>  
+    </section>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
+</script>
+</html>

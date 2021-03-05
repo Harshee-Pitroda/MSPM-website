@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>User Signup</title>
+        <link rel="stylesheet" href="/signinucss.css" />    
+    </head>
+
+<body>
+    <div id="container">
+       <header>SIGN-IN</header>
+       <form action="/auth/usersignin" method="post">
+          <fieldset>
+             <br/>
+             <input type="text" name="cname" id="cname" placeholder="Company Name" required>
+             <br/><br/>
+             <input type="text" name="cemail" id="cemail" placeholder="Company Email" required>
+             <br/><br/>
+             <input type="password" name="cpass" id="cpass" placeholder="Password" required>
+             <br/><br/>
+             <input type="text" name="cbranch" id="cbranch" placeholder="Company Branch" required><br/><br/><br/>
+<br>
+             <label for="submit"></label>
+             <input type="submit" name="submit" id="submit" value="Sign-in">
+             <br>
+             <input type="submit" name="submit" id="submit" value="Already have an account?Login">
+          </fieldset>
+       </form>
+    </div>
+ </body>
+
+ </html>

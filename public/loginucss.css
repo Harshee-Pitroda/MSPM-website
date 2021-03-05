@@ -1,0 +1,152 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+section{
+	font-size:3rem;
+	position:relative;
+	height:100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/ 
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.label {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.4em;
+    font-weight: 300;
+    line-height: 2.5em;
+    color: white;
+    text-align: center;
+
+}
+
+.email-input {
+    width: 450px;
+    height: 79px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 11px;
+    background: none;
+    margin-top: 18px;
+    padding-left: 30px;
+    padding-right: 25px;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.4em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 25px;
+}
+
+.email-input-list {
+    margin-bottom: 24px;
+}
+
+.email-input:focus {
+    background: rgba(0, 0, 0, 0.10);
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.email-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(255, 255, 255, 0.3);
+}
+  
+.email-input::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.email-input:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.email-input:-moz-placeholder { /* Firefox 18- */
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.email-input:focus::placeholder {
+    color: transparent;
+}
+
+.email-input:active {
+    background: rgba(0, 0, 0, 0.20);
+}
+
+.login-btn {
+    width: 300px;
+    height: 45px;
+    background: linear-gradient(90.99deg, rgba(64, 117, 238, 0.5) -20.91%, rgba(45, 70, 131, 0.5) 169.3%);
+    border: 0px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.55em;
+    font-weight: 600;
+    line-height: 1.1em;
+    color: white;
+    text-align: center;
+    margin-top: 12px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s ease-in-out;
+    margin-left: 100px;
+}
+
+.login-btn:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.30);
+}
+
+
+h1 {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1.0em;
+    color: white;
+    text-align: center;
+    margin-bottom: 13px;
+    margin-top: -9px;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 700px;
+    border-radius: 30px;
+    background: linear-gradient(132.23deg, rgba(78, 223, 255, 0.512) 2.32%, rgba(255, 255, 255, 0.10) 109.87%);
+    transform:translate(-50%,-50%);
+    backdrop-filter: blur(26px) saturate(100%) contrast(80%) brightness(90%);
+    -webkit-backdrop-filter: blur(26px) saturate(100%) contrast(80%) brightness(90%);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.14);
+    overflow: hidden;
+}
+
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i.postimg.cc/6p0W5Dkp/Gradient-BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
