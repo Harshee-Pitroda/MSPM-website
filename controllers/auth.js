@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { on } = require("nodemon");
 
 
 
@@ -146,4 +147,58 @@ exports.editinventory = async (req,res) => {
             console.log(results);
         }
     })
+}
+
+exports.updateinventory = (req,res) => {
+    console.log(req.body);
+    const pu_name = req.body.pu_name;
+    const pu_price = req.body.pu_price;
+    const pu_noproducts = req.body.pu_noproducts;
+    const pu_sidenote = req.body.pu_sidenote;
+
+    var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
+    var query = db.query(selectquery, [pu_name], function(err, result) {
+        if(err){
+            console.log(err)
+        }
+        if(result.length > 0){
+            var updatequery = "UPDATE inventorydetails set p_price =? , p_noproducts =?, p_sidenote =?, p_totalprice =?  WHERE p_name = ?";
+            var query = db.query(updatequery, [pu_price,pu_noproducts,pu_sidenote,(pu_noproducts*pu_price),pu_name], function(err, result) {
+                res.send("UPDATED INVENTORY");
+                console.log("Record Updated!!");
+                console.log(result);
+            });
+        }
+        else{
+            res.status(401).render('updateinventory1') 
+        }
+    });
+
+}
+
+exports.updateinventory1 = (req,res) => {
+    console.log(req.body);
+    const pu_name = req.body.pu_name;
+    const pu_price = req.body.pu_price;
+    const pu_noproducts = req.body.pu_noproducts;
+    const pu_sidenote = req.body.pu_sidenote;
+
+    var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
+    var query = db.query(selectquery, [pu_name], function(err, result) {
+        if(err){
+            console.log(err)
+        }
+        if(result.length > 0){
+            var updatequery = "UPDATE inventorydetails set p_price =? , p_noproducts =?, p_sidenote =?, p_totalprice =?  WHERE p_name = ?";
+            var query = db.query(updatequery, [pu_price,pu_noproducts,pu_sidenote,(pu_noproducts*pu_price),pu_name], function(err, result) {
+                res.send("UPDATED INVENTORY");
+                console.log("Record Updated!!");
+                console.log(result);
+            });
+        }
+        else{
+            res.status(401).render('updateinventory1') 
+        }
+    });
+
 }

@@ -9,4 +9,6 @@ router.post('/usersignin',authController.usersignin );
 router.post('/userlogin',authController.userlogin);
 
 router.post('/editinventory',authController.editinventory);
+
+router.post('/updateinventory',authController.updateinventory);
 module.exports = router;

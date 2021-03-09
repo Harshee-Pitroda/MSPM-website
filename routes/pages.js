@@ -57,6 +57,14 @@ router.get('/editinventory',(req,res)=>{
     res.render('editinventory');
 })
 
+router.get('/updateinventory',(req,res)=>{
+    res.render('updateinventory');
+})
+
+router.get('/updateinventory1',(req,res)=>{
+    res.render('updateinventory1');
+})
+
 router.get('/addperson',(req,res)=>{
     res.render('addperson');
 })
