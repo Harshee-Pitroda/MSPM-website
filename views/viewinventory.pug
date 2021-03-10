@@ -1,0 +1,29 @@
+html
+
+head
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="/inventorytablecss.css" rel="stylesheet">
+  title Inventory details
+
+
+body
+  h1 Inventory List
+
+  table
+    thead
+      tr
+        th Product Name
+        th Product Price
+        th Number of products
+        th Side note
+        th Total price
+      each item in items
+        tr
+          th=item.p_name
+          td=item.p_price
+          td=item.p_noproducts
+          td=item.p_sidenote
+          td=item.p_totalprice
+        
+
+

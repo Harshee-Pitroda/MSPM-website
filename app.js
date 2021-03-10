@@ -2,6 +2,9 @@ const express = require("express");
 const path = require("path");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
+var session  = require('express-session');
+var flash = require('connect-flash');
+var engines = require('consolidate');
 
 dotenv.config({ path: './.env'});
 
@@ -20,9 +23,11 @@ app.use(express.static(publicDirectory));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
-app.set('view engine', 'hbs');
-
+// app.engine('handlebars', engines.handlebars);
+// app.engine('pug', engines.pug);
 app.set('view engine','hbs');
+// app.set('view engine', 'pug');
+// app.set('views','./views');
 
 db.connect((error) => {
     if(error){
@@ -33,8 +38,18 @@ db.connect((error) => {
     }
 })
 
+
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false , maxAge: 60000 }
+  }))
+  
+  app.use(flash());
+
 
 app.listen(5001,()=>{
     console.log("SERVER STARTED ON PORT 5001");

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <h1>Inventory List</h1>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Number of products</th>
+        <th scope="col">Side notes</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each items as |item|}}
+      <tr>
+        <th scope="row">{{item.p_name}}</th>
+        <td>{{item.p_price}}</td>
+        <td>{{item.p_noproducts}}</td>
+        <td>{{item.p_sidenote}}</td>
+        <td>{{item.p_totalprice}}</td>
+        <td>
+          <a href="/updateinventory" class="btn btn-primary ">Update</a>
+          <a href="#" class="btn btn-danger ">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+
+</html>

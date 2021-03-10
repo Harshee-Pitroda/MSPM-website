@@ -202,3 +202,46 @@ exports.updateinventory1 = (req,res) => {
     });
 
 }
+
+// exports.viewinventory = (req,res) => {
+    
+//     return new Promise(function(resolve,reject){
+//         var selectquery = "SELECT * FROM inventorydetails";
+//         var query = db.query(selectquery, function(error, rows){
+//             if(error){
+//                 reject(error);
+//                 console.log(error);
+//             }
+//             else{
+//                 resolve(rows);
+//                 console.log(rows);
+//             }
+
+//         })
+//     })
+
+
+// }
+
+// exports.viewinventory = (req,res) => {
+    
+//         var selectquery = "SELECT * FROM inventorydetails";
+//         var query = db.query(selectquery, function(error, rows){
+//             res.json(rows);
+//             console.log(rows);
+//         })
+
+
+// }
+
+
+// exports.viewinventory = (req,res) => {
+//     var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
+//     var query = db.query(selectquery,function(err,rows,fields){
+//         if(err) throw err
+//         res.render('viewinventory',{
+//             title: 'Inventory detials',
+//             items: rows
+//         })
+//     })
+// }

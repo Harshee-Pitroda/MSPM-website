@@ -1,5 +1,15 @@
 const express = require('express');
+const mysql = require("mysql");
 const router = express.Router();
+var userModel = require("../controllers/auth");
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'mspm-website'
+});
+
+
 
 router.get('/',(req,res)=>{
     res.render('index');
@@ -77,4 +87,13 @@ router.get('/adminlogin1',(req,res)=>{
     res.render('adminlogin1');
 })
 
+router.get("/viewinvent",(req,res)=>{
+    var selectquery = "SELECT * FROM inventorydetails";
+    var query = db.query(selectquery,function(err,rows,fields){
+        if(err) throw err
+        res.render('viewinvent',{
+            items: rows
+        })
+    })
+});
 module.exports = router;
