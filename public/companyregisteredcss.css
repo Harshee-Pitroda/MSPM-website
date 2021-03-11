@@ -1,0 +1,83 @@
+body {
+    height: 100vh;
+    background:#0A293E ;
+    margin: 0;
+    display: grid;
+    font-family: sans-serif;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 8em 0;
+    height: 100vh;
+    text-shadow: 1px 0 6px rgb(0,0,0); 
+}
+
+    h1 {
+        font-size: 8em;
+        margin-top: 70px;
+        letter-spacing: -0.2rem;
+    }  
+    
+    
+    p {
+        font-size: 1.3rem;
+        margin: 0;
+        letter-spacing: -0.04rem;
+    }
+
+
+section {
+    text-align: center;
+    padding: 8em 0;
+    height: 100vh;
+    color: white;
+}
+h3 {
+    font-size: 3em;
+    margin-top: 8em;
+}
+svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    overflow: visible;
+}
+
+.Cloud_right {
+    animation: cloud-anim 70s alternate-reverse infinite linear;
+}
+.Cloud_left {
+    animation: cloud-anim 60s alternate-reverse infinite linear;
+}
+@keyframes cloud-anim {
+    from {
+        transform: translateX(0);
+    }
+    from {
+        transform: translateX(-30em);
+    }
+}
+
+.blink {
+    animation: blink-anim 2s alternate-reverse infinite ;
+}
+@keyframes blink-anim {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: .75;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}

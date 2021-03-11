@@ -11,4 +11,6 @@ router.post('/userlogin',authController.userlogin);
 router.post('/editinventory',authController.editinventory);
 
 router.post('/updateinventory',authController.updateinventory);
+
+router.post('/deleteinventory',authController.deleteinventory);
 module.exports = router;

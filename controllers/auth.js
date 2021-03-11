@@ -14,7 +14,6 @@ const db = mysql.createConnection({
 
 exports.addperson = async (req,res) => {
     console.log(req.body);
-    res.send("AUTHORITY ADDED");
     const user_name = req.body.user_name;
     const user_username = req.body.user_username;
     const user_password = req.body.user_password;
@@ -29,13 +28,13 @@ exports.addperson = async (req,res) => {
         }
         else{
             console.log(results);
+            res.render('authorityadded')
         }
     })
 }
 
 exports.usersignin = async (req,res) => {
     console.log(req.body);
-    res.send("COMPANY ADDED");
     const cname = req.body.cname;
     const cemail = req.body.cemail;
     const cpass = req.body.cpass;
@@ -51,6 +50,7 @@ exports.usersignin = async (req,res) => {
         }
         else{
             console.log(results);
+            res.render('companyregistered')
         }
     })
 }
@@ -133,7 +133,7 @@ exports.userlogin1 = async (req,res) => {
 
 exports.editinventory = async (req,res) => {
     console.log(req.body);
-    res.send("PRODUCT DETAILS ADDED");
+    // res.send("PRODUCT DETAILS ADDED");
     const p_name = req.body.p_name;
     const p_price = req.body.p_price;
     const p_noproducts = req.body.p_noproducts;
@@ -145,6 +145,7 @@ exports.editinventory = async (req,res) => {
         }
         else{
             console.log(results);
+            res.render('productadded')
         }
     })
 }
@@ -164,7 +165,7 @@ exports.updateinventory = (req,res) => {
         if(result.length > 0){
             var updatequery = "UPDATE inventorydetails set p_price =? , p_noproducts =?, p_sidenote =?, p_totalprice =?  WHERE p_name = ?";
             var query = db.query(updatequery, [pu_price,pu_noproducts,pu_sidenote,(pu_noproducts*pu_price),pu_name], function(err, result) {
-                res.send("UPDATED INVENTORY");
+                res.render('productupdated')
                 console.log("Record Updated!!");
                 console.log(result);
             });
@@ -203,6 +204,29 @@ exports.updateinventory1 = (req,res) => {
 
 }
 
+exports.deleteinventory = (req,res) => {
+    console.log(req.body);
+    const pu_name = req.body.pu_name;
+
+    var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
+    var query = db.query(selectquery, [pu_name], function(err, result) {
+        if(err){
+            console.log(err)
+        }
+        if(result.length > 0){
+            var deletequery = "DELETE FROM inventorydetails WHERE p_name = ?";
+            var query = db.query(deletequery,[pu_name],function(err, result) {
+                res.send("PRODUCT DELETED");
+                console.log("PRODUCT DELETED!!");
+                console.log(result);
+            });
+        }
+        else{
+            res.status(401).render('updateinventory1') 
+        }
+    });
+
+}
 // exports.viewinventory = (req,res) => {
     
 //     return new Promise(function(resolve,reject){

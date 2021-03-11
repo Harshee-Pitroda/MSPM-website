@@ -87,6 +87,30 @@ router.get('/adminlogin1',(req,res)=>{
     res.render('adminlogin1');
 })
 
+router.get('/deleteinventory',(req,res)=>{
+    res.render('deleteinventory');
+})
+
+router.get('/productadded',(req,res)=>{
+    res.render('productadded');
+})
+
+router.get('/productupdated',(req,res)=>{
+    res.render('productupdated');
+})
+
+router.get('/productadded',(req,res)=>{
+    res.render('productadded');
+})
+
+router.get('/authorityadded',(req,res)=>{
+    res.render('authorityadded');
+})
+
+router.get('/companyregistered',(req,res)=>{
+    res.render('companyregistered');
+})
+
 router.get("/viewinvent",(req,res)=>{
     var selectquery = "SELECT * FROM inventorydetails";
     var query = db.query(selectquery,function(err,rows,fields){
