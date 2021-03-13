@@ -127,21 +127,6 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
-// router.get("/search1", (req, res) => {
-//   const search_name = req.body.search_name;
-//   var selectquery = "SELECT * FROM inventorydetails WHERE p_name= ?";
-//   var query = db.query(selectquery,[search_name], function (err, rows, fields) {
-//     if (err) {
-//       // console.log(err);
-//     }
-//     else{
-//       res.render("viewinvent", {
-//         items: rows,
-//       });
-//     }
-//     console.log(rows);
-//   });
-// });
 
 router.get("/add1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;
@@ -184,5 +169,37 @@ router.get("/delete1/:p_name", (req, res, next) => {
       });
     }
   });
+});
+
+router.get("/nopless10", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts < 10";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/pmax", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_price=(SELECT MAX(p_price) FROM inventorydetails)";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
 });
 module.exports = router;

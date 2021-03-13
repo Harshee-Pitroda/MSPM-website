@@ -244,3 +244,19 @@ exports.viewinvent = (req,res) => {
       console.log(rows);
     });
 }    
+
+// exports.viewinvent2 = (req,res) => {
+//     console.log(req.body);
+//     var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts < 10";
+//     var query = db.query(selectquery, function (err, rows, fields) {
+//       if (err) {
+//         console.log(err);
+//       }
+//       else{
+//         res.render("viewinvent2", {
+//           items: rows,
+//         });
+//       }
+//       console.log(rows);
+//     });
+// } 

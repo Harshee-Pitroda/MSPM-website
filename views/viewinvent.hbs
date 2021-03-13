@@ -1,7 +1,7 @@
 <html>
 
 <head>
-      <link href="/searchquotationcss.css" rel="stylesheet">
+  <link href="/searchquotationcss.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 
@@ -9,13 +9,38 @@
 
 <body>
   <br>
-  <h1><center>Inventory List</center></h1>
+  <h1>
+    <center>Inventory List</center>
+  </h1>
   <br>
   <div class="cover">
-    <form class="flex-form" action="/auth/viewinvent"  method="post">
-      <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?" >
+    <form class="flex-form" action="/auth/viewinvent" method="post">
+      <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?">
       <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
-    </form>  
+    </form>
+    <div id="workarea">
+      <div class="position">
+          <div class="svg-wrapper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="150" />
+              <div id="text">
+                 <a href="/nopless10"><span class="spot"></span>Products less than 10</a>
+              </div>
+            </svg>
+          </div>
+          <!--Next button -->
+          <div id="workarea" style="margin: -54px 18px 24px 174px;">
+          <div class="svg-wrapper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="150" />
+              <div id="text">
+                <a href="/pmax"><span class="spot"></span>Product with maximum price</a>
+              </div>
+            </svg>
+          </div>
+          </div>
+      </div>
+    </div>
   </div>
   <br>
   <table class="table">
@@ -37,7 +62,8 @@
         <td>{{item.p_price}}</td>
         <td>{{item.p_noproducts}}</td>
         <td><a href="/add1/{{item.p_name}}" class="btn btn-primary "><i class="fas fa-plus-circle"></i></a>
-        <a href="/delete1/{{item.p_name}}" class="btn btn-danger "><i class="fas fa-minus-circle"></i></a></td>
+          <a href="/delete1/{{item.p_name}}" class="btn btn-danger "><i class="fas fa-minus-circle"></i></a>
+        </td>
         <td>{{item.p_sidenote}}</td>
         <td>{{item.p_totalprice}}</td>
         <td>
