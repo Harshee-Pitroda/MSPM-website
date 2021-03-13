@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="/inventorydeleteformcss.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+</head>
+
+
+<body>
+  <div class="main">
+    <div id="show_bg">
+      <div class="header">
+        <h1 id="title">INVENTORY</h1>
+        <p id="description">
+          DELETE ITEMS FROM THE INVENTORY RIGHT HERE
+        </p>
+      </div>
+
+      <!-- Form Begin -->
+      <div class="survey-container">
+        <form id="add_inventory" action="/auth/deleteinventory" method="post">
+          <label>THE PRODUCT YOUR ARE TRYING TO DELETE DOES NOT EXIST</label>
+          <label for="name">Product Name</label>
+          <input type="text" id="pu_name" name="pu_name" placeholder="E.g. SCREW" required>
+          </br></br>
+          <button class="button-container" type="submit"><a style="color:rgb(81, 12, 241);">SUBMIT</a></button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

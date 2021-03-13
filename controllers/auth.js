@@ -192,7 +192,7 @@ exports.updateinventory1 = (req,res) => {
         if(result.length > 0){
             var updatequery = "UPDATE inventorydetails set p_price =? , p_noproducts =?, p_sidenote =?, p_totalprice =?  WHERE p_name = ?";
             var query = db.query(updatequery, [pu_price,pu_noproducts,pu_sidenote,(pu_noproducts*pu_price),pu_name], function(err, result) {
-                res.send("UPDATED INVENTORY");
+                res.render('productupdated')
                 console.log("Record Updated!!");
                 console.log(result);
             });
@@ -216,13 +216,13 @@ exports.deleteinventory = (req,res) => {
         if(result.length > 0){
             var deletequery = "DELETE FROM inventorydetails WHERE p_name = ?";
             var query = db.query(deletequery,[pu_name],function(err, result) {
-                res.send("PRODUCT DELETED");
+                res.render('productdeleted')
                 console.log("PRODUCT DELETED!!");
                 console.log(result);
             });
         }
         else{
-            res.status(401).render('updateinventory1') 
+            res.status(401).render('deleteinventory1') 
         }
     });
 

@@ -1,59 +1,59 @@
 body {
    
-  }
-  #forestBackground {
+}
+#forestBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://images.unsplash.com/photo-1592185161765-2ea880a392b8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8Z2VhcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.forestCard {
+    height: 200px;
+    width: 400px;
+    margin: 11px;
+    border-radius: 5px;
+    text-shadow: 5px 5px 5px #525354;
+    letter-spacing: 1px;
+    transition: .3s;
+    background-color: hsla(360, 100%, 100%, 0.10);
+    border: 5px solid hsla(360, 100%, 100%, 0.5);
+}
+.forestCard:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+}
+.cardContent {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-image: url(https://images.unsplash.com/photo-1589526603318-2c0ba291ffc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80);
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  .forestCard {
-      height: 200px;
-      width: 400px;
-      margin: 11px;
-      border-radius: 5px;
-      text-shadow: 5px 5px 5px #525354;
-      letter-spacing: 1px;
-      transition: .3s;
-      background-color: hsla(360, 100%, 100%, 0.10);
-      border: 5px solid hsla(360, 100%, 100%, 0.5);
-  }
-  .forestCard:hover {
-      transform: scale3d(1.02, 1.02, 1.02);
-  }
-  .cardContent {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px;
-      height: 20px;;
-      padding: 10px;
-  }
-  .forestCard h3 {
-      font-family: 'Lobster', cursive;
-      font-weight: bolder;
-      font-size: 30px;
-      color: hsla(360, 100%, 100%, 0.8);
-  }
-  .forestCard p {
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      color: hsla(360, 100%, 100%, 0.8);
-      text-shadow: 1px 1px 1px #525354;
-  }
-  .forestCard button {
-      margin-top: 20px;
-      padding: 15px;
-      letter-spacing: 2px;
-      font-family: 'Oswald', sans-serif;
-      color: hsla(360, 100%, 100%, 0.8);
-      background-color: hsla(360, 100%, 100%, 0.25);
-      border: 2px solid hsla(360, 100%, 100%, 0.5);
-  }
-  .forestCard button:focus {
-      outline: none;
-  }
+    margin: 10px;
+    height: 20px;;
+    padding: 10px;
+}
+.forestCard h3 {
+    font-family: 'Lobster', cursive;
+    font-weight: bolder;
+    font-size: 30px;
+    color: hsla(360, 100%, 100%, 0.8);
+}
+.forestCard p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: hsla(360, 100%, 100%, 0.8);
+    text-shadow: 1px 1px 1px #525354;
+}
+.forestCard button {
+    margin-top: 20px;
+    padding: 15px;
+    letter-spacing: 2px;
+    font-family: 'Oswald', sans-serif;
+    color: hsla(360, 100%, 100%, 0.8);
+    background-color: hsla(360, 100%, 100%, 0.25);
+    border: 2px solid hsla(360, 100%, 100%, 0.5);
+}
+.forestCard button:focus {
+    outline: none;
+}
