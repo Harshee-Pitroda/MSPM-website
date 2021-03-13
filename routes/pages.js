@@ -1,123 +1,163 @@
-const express = require('express');
+const express = require("express");
 const mysql = require("mysql");
 const router = express.Router();
 var userModel = require("../controllers/auth");
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'mspm-website'
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "mspm-website",
 });
 
+router.get("/", (req, res) => {
+  res.render("index");
+});
 
+router.get("/aboutus", (req, res) => {
+  res.render("aboutus");
+});
 
-router.get('/',(req,res)=>{
-    res.render('index');
-})
+router.get("/meetthedirectors", (req, res) => {
+  res.render("meetthedirectors");
+});
 
-router.get('/aboutus',(req,res)=>{
-    res.render('aboutus');
-})
+router.get("/stats", (req, res) => {
+  res.render("stats");
+});
 
-router.get('/meetthedirectors',(req,res)=>{
-    res.render('meetthedirectors');
-})
+router.get("/loginchoice", (req, res) => {
+  res.render("loginchoice");
+});
 
-router.get('/stats',(req,res)=>{
-    res.render('stats');
-})
+router.get("/chooseperson", (req, res) => {
+  res.render("chooseperson");
+});
 
-router.get('/loginchoice',(req,res)=>{
-    res.render('loginchoice');
-})
+router.get("/inventorychoice", (req, res) => {
+  res.render("inventorychoice");
+});
 
-router.get('/chooseperson',(req,res)=>{
-    res.render('chooseperson');
-})
+router.get("/makeaquotation", (req, res) => {
+  res.render("makeaquotation");
+});
 
-router.get('/inventorychoice',(req,res)=>{
-    res.render('inventorychoice');
-})
+router.get("/searchaquotation", (req, res) => {
+  res.render("searchaquotation");
+});
 
-router.get('/makeaquotation',(req,res)=>{
-    res.render('makeaquotation');
-})
+router.get("/userlogin", (req, res) => {
+  res.render("userlogin");
+});
 
-router.get('/searchaquotation',(req,res)=>{
-    res.render('searchaquotation');
-})
+router.get("/userlogin1", (req, res) => {
+  res.render("userlogin1");
+});
 
-router.get('/userlogin',(req,res)=>{
-    res.render('userlogin');
-})
+router.get("/usersignin", (req, res) => {
+  res.render("usersignin");
+});
 
-router.get('/userlogin1',(req,res)=>{
-    res.render('userlogin1');
-})
+router.get("/chooseuser", (req, res) => {
+  res.render("chooseuser");
+});
 
-router.get('/usersignin',(req,res)=>{
-    res.render('usersignin');
-})
+router.get("/editinventory", (req, res) => {
+  res.render("editinventory");
+});
 
-router.get('/chooseuser',(req,res)=>{
-    res.render('chooseuser');
-})
+router.get("/updateinventory", (req, res) => {
+  res.render("updateinventory");
+});
 
-router.get('/editinventory',(req,res)=>{
-    res.render('editinventory');
-})
+router.get("/updateinventory1", (req, res) => {
+  res.render("updateinventory1");
+});
 
-router.get('/updateinventory',(req,res)=>{
-    res.render('updateinventory');
-})
+router.get("/addperson", (req, res) => {
+  res.render("addperson");
+});
 
-router.get('/updateinventory1',(req,res)=>{
-    res.render('updateinventory1');
-})
+router.get("/adminlogin", (req, res) => {
+  res.render("adminlogin");
+});
 
-router.get('/addperson',(req,res)=>{
-    res.render('addperson');
-})
+router.get("/adminlogin1", (req, res) => {
+  res.render("adminlogin1");
+});
 
-router.get('/adminlogin',(req,res)=>{
-    res.render('adminlogin');
-})
+router.get("/deleteinventory", (req, res) => {
+  res.render("deleteinventory");
+});
 
-router.get('/adminlogin1',(req,res)=>{
-    res.render('adminlogin1');
-})
+router.get("/productadded", (req, res) => {
+  res.render("productadded");
+});
 
-router.get('/deleteinventory',(req,res)=>{
-    res.render('deleteinventory');
-})
+router.get("/productupdated", (req, res) => {
+  res.render("productupdated");
+});
 
-router.get('/productadded',(req,res)=>{
-    res.render('productadded');
-})
+router.get("/productadded", (req, res) => {
+  res.render("productadded");
+});
 
-router.get('/productupdated',(req,res)=>{
-    res.render('productupdated');
-})
+router.get("/authorityadded", (req, res) => {
+  res.render("authorityadded");
+});
 
-router.get('/productadded',(req,res)=>{
-    res.render('productadded');
-})
+router.get("/companyregistered", (req, res) => {
+  res.render("companyregistered");
+});
 
-router.get('/authorityadded',(req,res)=>{
-    res.render('authorityadded');
-})
+router.get("/viewinvent", (req, res) => {
+  var selectquery = "SELECT * FROM inventorydetails";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("viewinvent", {
+      items: rows,
+    });
+  });
+});
 
-router.get('/companyregistered',(req,res)=>{
-    res.render('companyregistered');
-})
+router.get("/add1/:p_name", (req, res, next) => {
+  let pname = req.params.p_name;
+  let p_noproducts = parseFloat(req.params.p_noproducts);
+  let p_price = parseFloat(req.params.p_price);
+  var add1query =
+    "UPDATE inventorydetails set p_noproducts = (p_noproducts+1) , p_totalprice = (p_noproducts*p_price) WHERE p_name = ?";
+  var query = db.query(add1query, [pname], function (err, rows, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      var selectquery = "SELECT * FROM inventorydetails";
+      var query = db.query(selectquery, function (err, rows, fields) {
+        if (err) throw err;
+        res.render("viewinvent", {
+          items: rows,
+        });
+      });
+    }
+  });
+});
 
-router.get("/viewinvent",(req,res)=>{
-    var selectquery = "SELECT * FROM inventorydetails";
-    var query = db.query(selectquery,function(err,rows,fields){
-        if(err) throw err
-        res.render('viewinvent',{
-            items: rows
-        })
-    })
+router.get("/delete1/:p_name", (req, res, next) => {
+  let pname = req.params.p_name;
+  let p_noproducts = parseFloat(req.params.p_noproducts);
+  let p_price = parseFloat(req.params.p_price);
+  var add1query =
+    "UPDATE inventorydetails set p_noproducts = (p_noproducts-1) , p_totalprice = (p_noproducts*p_price) WHERE p_name = ?";
+  var query = db.query(add1query, [pname], function (err, rows, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      var selectquery = "SELECT * FROM inventorydetails";
+      var query = db.query(selectquery, function (err, rows, fields) {
+        if (err) throw err;
+        res.render("viewinvent", {
+          items: rows,
+        });
+      });
+    }
+  });
 });
 module.exports = router;

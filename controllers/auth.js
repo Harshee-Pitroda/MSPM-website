@@ -227,6 +227,18 @@ exports.deleteinventory = (req,res) => {
     });
 
 }
+
+// exports.add1 = (req,res) => {
+//      var add1query = "UPDATE inventorydetails set p_noproducts = (p_noproducts+1) WHERE p_name = ?";
+//     var query = db.query(add1query,[prodname],function(err,rows,result){
+//         if(err){
+//             console.log(err);
+//         }else{
+//             res.render('viewinvent')
+//         }
+
+//     })
+// }
 // exports.viewinventory = (req,res) => {
     
 //     return new Promise(function(resolve,reject){
