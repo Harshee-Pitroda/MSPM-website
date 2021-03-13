@@ -24,38 +24,14 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-  background: url("/quotation.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  color: #0a0a0b;
-  overflow: hidden;
-}
-
 i {
   font-size: 1.3rem;
 }
 
-.cover  {
-  height: 100vh;
-  width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
-  padding: 20px 50px;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
+.cover{
+  margin: 10px 9px 14px 514px;
 }
+
 
 .flex-form input[type="submit"] {
   background: black;
@@ -84,7 +60,6 @@ i {
 
 .flex-form > * {
   border: 0;
-  padding: 0 0 0 10px;
   background: #fff;
   line-height: 50px;
   font-size: 1rem;
@@ -93,12 +68,13 @@ i {
   -webkit-appearance: none;
 }
 
-input[type="search"] {
+input[type="text"] {
   flex-basis: 500px;
+  text-align: center;
 }
 
 
-@media all and (max-width:800px) {
+@media all and (max-width:80  0px) {
   body {
     font-size: 0.9rem;
   }

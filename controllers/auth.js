@@ -228,56 +228,19 @@ exports.deleteinventory = (req,res) => {
 
 }
 
-// exports.add1 = (req,res) => {
-//      var add1query = "UPDATE inventorydetails set p_noproducts = (p_noproducts+1) WHERE p_name = ?";
-//     var query = db.query(add1query,[prodname],function(err,rows,result){
-//         if(err){
-//             console.log(err);
-//         }else{
-//             res.render('viewinvent')
-//         }
-
-//     })
-// }
-// exports.viewinventory = (req,res) => {
-    
-//     return new Promise(function(resolve,reject){
-//         var selectquery = "SELECT * FROM inventorydetails";
-//         var query = db.query(selectquery, function(error, rows){
-//             if(error){
-//                 reject(error);
-//                 console.log(error);
-//             }
-//             else{
-//                 resolve(rows);
-//                 console.log(rows);
-//             }
-
-//         })
-//     })
-
-
-// }
-
-// exports.viewinventory = (req,res) => {
-    
-//         var selectquery = "SELECT * FROM inventorydetails";
-//         var query = db.query(selectquery, function(error, rows){
-//             res.json(rows);
-//             console.log(rows);
-//         })
-
-
-// }
-
-
-// exports.viewinventory = (req,res) => {
-//     var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
-//     var query = db.query(selectquery,function(err,rows,fields){
-//         if(err) throw err
-//         res.render('viewinventory',{
-//             title: 'Inventory detials',
-//             items: rows
-//         })
-//     })
-// }
+exports.viewinvent = (req,res) => {
+    console.log(req.body);
+    const search_name = req.body.search_name;
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_name= ?";
+    var query = db.query(selectquery,[search_name], function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+}    

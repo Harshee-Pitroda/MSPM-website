@@ -77,6 +77,14 @@ router.get("/addperson", (req, res) => {
   res.render("addperson");
 });
 
+router.get("/viewinvent2", (req, res) => {
+  res.render("viewinvent2");
+});
+
+router.get("/searchinvent", (req, res) => {
+  res.render("searchinvent");
+});
+
 router.get("/adminlogin", (req, res) => {
   res.render("adminlogin");
 });
@@ -119,6 +127,22 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
+// router.get("/search1", (req, res) => {
+//   const search_name = req.body.search_name;
+//   var selectquery = "SELECT * FROM inventorydetails WHERE p_name= ?";
+//   var query = db.query(selectquery,[search_name], function (err, rows, fields) {
+//     if (err) {
+//       // console.log(err);
+//     }
+//     else{
+//       res.render("viewinvent", {
+//         items: rows,
+//       });
+//     }
+//     console.log(rows);
+//   });
+// });
+
 router.get("/add1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;
   let p_noproducts = parseFloat(req.params.p_noproducts);
@@ -139,6 +163,7 @@ router.get("/add1/:p_name", (req, res, next) => {
     }
   });
 });
+
 
 router.get("/delete1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;

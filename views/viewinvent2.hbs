@@ -24,10 +24,8 @@
         <th scope="col">Product Name</th>
         <th scope="col">Product Price</th>
         <th scope="col">Number of products</th>
-        <th scope="col">Add/Delete</th>
         <th scope="col">Side notes</th>
         <th scope="col">Total Price</th>
-        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -36,14 +34,8 @@
         <th scope="row">{{item.p_name}}</th>
         <td>{{item.p_price}}</td>
         <td>{{item.p_noproducts}}</td>
-        <td><a href="/add1/{{item.p_name}}" class="btn btn-primary "><i class="fas fa-plus-circle"></i></a>
-        <a href="/delete1/{{item.p_name}}" class="btn btn-danger "><i class="fas fa-minus-circle"></i></a></td>
         <td>{{item.p_sidenote}}</td>
         <td>{{item.p_totalprice}}</td>
-        <td>
-          <a href="/updateinventory" class="btn btn-primary ">Update <i class="fas fa-pen"></i></a>
-          <a href="/deleteinventory" class="btn btn-danger ">Delete <i class="fas fa-trash-alt"></i></a>
-        </td>
       </tr>
       {{/each}}
     </tbody>
