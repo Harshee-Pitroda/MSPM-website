@@ -248,4 +248,22 @@ router.get("/deleteauth/:a_name", (req, res, next) => {
   });
 });
 
+router.get("/deleteitem/:p_name", (req, res, next) => {
+  let pname = req.params.p_name;
+  var add1query =
+    "DELETE FROM inventorydetails WHERE p_name = ?";
+  var query = db.query(add1query, [pname], function (err, rows, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      var selectquery = "SELECT * FROM inventorydetails";
+      var query = db.query(selectquery, function (err, rows, fields) {
+        if (err) throw err;
+        res.render("viewinvent", {
+          items: rows,
+        });
+      });
+    }
+  });
+});
 module.exports = router;

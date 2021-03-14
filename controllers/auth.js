@@ -204,29 +204,29 @@ exports.updateinventory1 = (req,res) => {
 
 }
 
-exports.deleteinventory = (req,res) => {
-    console.log(req.body);
-    const pu_name = req.body.pu_name;
+// exports.deleteinventory = (req,res) => {
+//     console.log(req.body);
+//     const pu_name = req.body.pu_name;
 
-    var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
-    var query = db.query(selectquery, [pu_name], function(err, result) {
-        if(err){
-            console.log(err)
-        }
-        if(result.length > 0){
-            var deletequery = "DELETE FROM inventorydetails WHERE p_name = ?";
-            var query = db.query(deletequery,[pu_name],function(err, result) {
-                res.render('productdeleted')
-                console.log("PRODUCT DELETED!!");
-                console.log(result);
-            });
-        }
-        else{
-            res.status(401).render('deleteinventory1') 
-        }
-    });
+//     var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
+//     var query = db.query(selectquery, [pu_name], function(err, result) {
+//         if(err){
+//             console.log(err)
+//         }
+//         if(result.length > 0){
+//             var deletequery = "DELETE FROM inventorydetails WHERE p_name = ?";
+//             var query = db.query(deletequery,[pu_name],function(err, result) {
+//                 res.render('productdeleted')
+//                 console.log("PRODUCT DELETED!!");
+//                 console.log(result);
+//             });
+//         }
+//         else{
+//             res.status(401).render('deleteinventory1') 
+//         }
+//     });
 
-}
+// }
 
 exports.viewinvent = (req,res) => {
     console.log(req.body);

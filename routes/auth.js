@@ -12,8 +12,6 @@ router.post('/editinventory',authController.editinventory);
 
 router.post('/updateinventory',authController.updateinventory);
 
-router.post('/deleteinventory',authController.deleteinventory);
-
 router.post('/viewinvent',authController.viewinvent);
 
 router.post('/viewauthority',authController.viewauthority);
