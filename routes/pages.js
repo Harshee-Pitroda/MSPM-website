@@ -267,3 +267,35 @@ router.get("/deleteitem/:p_name", (req, res, next) => {
   });
 });
 module.exports = router;
+
+router.get("/orderbyinventasc", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails ORDER BY p_name";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/orderbyinventdesc", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails ORDER BY p_name DESC";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
