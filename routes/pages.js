@@ -93,6 +93,7 @@ router.get("/adminlogin1", (req, res) => {
   res.render("adminlogin1");
 });
 
+
 router.get("/deleteinventory", (req, res) => {
   res.render("deleteinventory");
 });
@@ -127,6 +128,15 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
+router.get("/viewauthority", (req, res) => {
+  var selectquery = "SELECT * FROM add_authority";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("viewauthority", {
+      items: rows,
+    });
+  });
+});
 
 router.get("/add1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;
@@ -218,4 +228,24 @@ router.get("/pmin", (req, res, next) => {
       console.log(rows);
     });
 });
+
+router.get("/deleteauth/:a_name", (req, res, next) => {
+  let aname = req.params.a_name;
+  var add1query =
+    "DELETE FROM add_authority WHERE a_name = ?";
+  var query = db.query(add1query, [aname], function (err, rows, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      var selectquery = "SELECT * FROM add_authority";
+      var query = db.query(selectquery, function (err, rows, fields) {
+        if (err) throw err;
+        res.render("viewauthority", {
+          items: rows,
+        });
+      });
+    }
+  });
+});
+
 module.exports = router;

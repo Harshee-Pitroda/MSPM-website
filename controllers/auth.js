@@ -245,18 +245,19 @@ exports.viewinvent = (req,res) => {
     });
 }    
 
-// exports.viewinvent2 = (req,res) => {
-//     console.log(req.body);
-//     var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts < 10";
-//     var query = db.query(selectquery, function (err, rows, fields) {
-//       if (err) {
-//         console.log(err);
-//       }
-//       else{
-//         res.render("viewinvent2", {
-//           items: rows,
-//         });
-//       }
-//       console.log(rows);
-//     });
-// } 
+exports.viewauthority = (req,res) => {
+    console.log(req.body);
+    const search_name = req.body.search_name;
+    var selectquery = "SELECT * FROM add_authority WHERE a_name= ?";
+    var query = db.query(selectquery,[search_name], function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewauthority", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+}    
