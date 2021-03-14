@@ -299,3 +299,35 @@ router.get("/orderbyinventdesc", (req, res, next) => {
       console.log(rows);
     });
 });
+
+router.get("/orderbyauthasc", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM add_authority ORDER BY a_name";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewauthority", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/orderbyauthdesc", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM add_authority ORDER BY a_name DESC";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewauthority", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
