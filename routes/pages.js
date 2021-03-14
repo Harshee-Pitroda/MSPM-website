@@ -202,4 +202,20 @@ router.get("/pmax", (req, res, next) => {
       console.log(rows);
     });
 });
+
+router.get("/pmin", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_price=(SELECT MIN(p_price) FROM inventorydetails)";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
 module.exports = router;
