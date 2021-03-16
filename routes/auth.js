@@ -17,5 +17,7 @@ router.post('/viewinvent',authController.viewinvent);
 router.post('/viewauthority',authController.viewauthority);
 
 router.post('/feedbackform',authController.feedbackform);
+
+router.post('/viewcomplaints',authController.viewcomplaints);
 // router.post('/viewinvent',authController.viewinvent2);
 module.exports = router;

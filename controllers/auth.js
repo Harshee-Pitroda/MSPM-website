@@ -280,3 +280,20 @@ exports.feedbackform = async (req,res) => {
         }
     })
 }
+
+exports.viewcomplaints = (req,res) => {
+    console.log(req.body);
+    const search_name = req.body.search_name;
+    var selectquery = "SELECT * FROM complaints WHERE c_companyname = ?";
+    var query = db.query(selectquery,[search_name], function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewcomplaints", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+}    
