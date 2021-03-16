@@ -297,3 +297,22 @@ exports.viewcomplaints = (req,res) => {
       console.log(rows);
     });
 }    
+
+exports.companydataform = async (req,res) => {
+    console.log(req.body);
+    // res.send("PRODUCT DETAILS ADDED");
+    const companyabv = req.body.abv;
+    const companyname = req.body.name;
+    const companyadd = req.body.add;
+    const companyemail = req.body.email;
+
+    db.query('INSERT INTO companydetails SET ? ',  { companyabv:companyabv,companyname:companyname,companyadd:companyadd,companyemail:companyemail},(error,results) =>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log(results);
+            res.render('companyregistered')
+        }
+    })
+}
