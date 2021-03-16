@@ -51,7 +51,7 @@ textarea{
 }
 
 input {
-    width: 276px;
+    width: 300px;
     height: 48px;
     border: 1px solid rgba(255,255,255,.4);
     -moz-border-radius: 4px;
@@ -118,7 +118,6 @@ input:focus, textarea:focus {
 	  -moz-border-radius: 4px;
 	  -webkit-border-radius: 4px;
 	  border-radius: 4px;
-	  float:right;
     border: 1px solid #253737;
     background: #416b68;
     background: -webkit-gradient(linear, left top, left bottom, from(#6da5a3), to(#416b68));
@@ -127,7 +126,6 @@ input:focus, textarea:focus {
     background: -ms-linear-gradient(top, #6da5a3, #416b68);
     background: -o-linear-gradient(top, #6da5a3, #416b68);
     background-image: -ms-linear-gradient(top, #6da5a3 0%, #416b68 100%);
-    padding: 10.5px 21px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;

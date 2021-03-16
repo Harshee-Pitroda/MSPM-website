@@ -30,7 +30,8 @@ h1{
     letter-spacing: 0.05em;
     display: inline-block;
     font-family: 'Reggae One', cursive;
-    transition: transform .4s; 
+    transition: transform .4s;
+    margin-top: 0px; 
 }
 
 .titleeffect1{

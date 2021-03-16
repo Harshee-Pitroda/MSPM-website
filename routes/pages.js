@@ -101,6 +101,10 @@ router.get("/adminlogin1", (req, res) => {
   res.render("adminlogin1");
 });
 
+router.get("/companydataform", (req, res) => {
+  res.render("companydataform");
+});
+
 
 router.get("/deleteinventory", (req, res) => {
   res.render("deleteinventory");
