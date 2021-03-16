@@ -29,7 +29,6 @@
         <th scope="col">Company Email</th>
         <th scope="col">Complaint</th>
         <th scope="col">Date of complaint</th>
-        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -39,7 +38,6 @@
         <td><a href="mailto:{{item.c_companyemail}}" class="btn btn-dark"><i class="fas fa-envelope-square"></i> &nbsp;&nbsp;{{item.c_companyemail}}</a></td>
         <td  style="width: 480px;">{{item.c_complaint}}</td>
         <td>{{item.c_dateofcomplaint}}</td>
-        <td><a href="#" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a></td>
       </tr>
       {{/each}}
     </tbody>

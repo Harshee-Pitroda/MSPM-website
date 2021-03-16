@@ -1,83 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+* ::-webkit-scrollbar-track {
+  background: #0d1318;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background: #283a4a;
+}
+
+* ::-webkit-scrollbar-thumb:hover {
+  background: #162029;
+}
+
+.h2-animate {
+	-webkit-animation: h2-animate 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: h2-animate 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes h2-animate {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes h2-animate {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
 body {
-    height: 100vh;
-    background:#0A293E ;
-    margin: 0;
-    display: grid;
-    font-family: sans-serif;
-    color: white;
+  font-family: Poppins, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
-.container {
-    text-align: center;
-    padding: 8em 0;
-    height: 100vh;
-    text-shadow: 1px 0 6px rgb(0,0,0); 
+body h2 {
+  margin-top: 20px;
+  color: #fffbfb;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 30px;
 }
 
-    h1 {
-        font-size: 8em;
-        margin-top: 70px;
-        letter-spacing: -0.2rem;
-    }  
-    
-    
-    p {
-        font-size: 1.3rem;
-        margin: 0;
-        letter-spacing: -0.04rem;
-    }
-
-
-section {
-    text-align: center;
-    padding: 8em 0;
-    height: 100vh;
-    color: white;
-}
-h3 {
-    font-size: 3em;
-    margin-top: 8em;
-}
-svg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    overflow: visible;
+.card-section {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.Cloud_right {
-    animation: cloud-anim 70s alternate-reverse infinite linear;
-}
-.Cloud_left {
-    animation: cloud-anim 60s alternate-reverse infinite linear;
-}
-@keyframes cloud-anim {
-    from {
-        transform: translateX(0);
-    }
-    from {
-        transform: translateX(-30em);
-    }
+.card-section .card {
+  padding: 20px;
+  margin: 15px;
+  border-radius: 5px;
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 390px;
+  -webkit-box-shadow: 1px 1px 13px #000000;
+  box-shadow: 1px 1px 13px #000000;
+  background-color: #0d1318;
 }
 
-.blink {
-    animation: blink-anim 2s alternate-reverse infinite ;
+.card-section .card h3 {
+  color: #fffbfb;
+  font-size: 25px;
+  padding: 10px;
 }
-@keyframes blink-anim {
-    0% {
-        opacity: 1;
-    }
-    25% {
-        opacity: .75;
-    }
-    50% {
-        opacity: .5;
-    }
-    75% {
-        opacity: 0.75;
-    }
-    100% {
-        opacity: 1;
-    }
+
+.card-section .card p {
+  max-height: 220px;
+  overflow: auto;
+  color: #fffbfb;
+  padding: 15px;
 }
+
+.card-section .card img {
+  margin-top: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fffbfb;
+  border-radius: 60px;
+}
+
+.card-section .card .card-footer {
+  position: relative;
+  display: block;
+  
+}
+
+.card-section .card .card-footer button {
+  position: relative;
+  min-width: 120px;
+  top:30px;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #fffbfb;
+  color: #0d1318;
+  font-weight: bold;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.animate-btn {
+	-webkit-animation: animate-btn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: animate-btn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+ @-webkit-keyframes animate-btn {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes animate-btn {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.animate-img {
+	-webkit-animation: animate-img 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: animate-img 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+ @-webkit-keyframes animate-img {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+  }
+}
+@keyframes animate-img {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
+  }
+}
+
+.card-section .card .card-footer button:hover {
+  background-color: #2C3E50;
+  color: #fffbfb;
+}
+
+.card-section .card .card-footer button:focus {
+  outline: none;
+}
+
+.card-section .card .card-footer a {
+  position: relative;
+  margin: 10px;
+  text-decoration: none;
+  color: #fffbfb;
+  font-size: 20px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.card-section .card .card-footer a i {
+  transition: all .4s;
+}
+
+.card-section .card .card-footer a i:hover {
+  text-shadow: 1px 0px 8px #ffffff;
+  transform: scale(1.3);
+}
+
+.card-section .card ul {
+  padding: 0 30px 0 30px;
+  margin-bottom: 30px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+
+
+@media screen and (max-width: 1366px) {
+  .card-section {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .card-section {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+.card-section .card ul li {
+  color: #fffbfb;
+}
+
