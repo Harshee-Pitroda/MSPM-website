@@ -261,3 +261,22 @@ exports.viewauthority = (req,res) => {
       console.log(rows);
     });
 }    
+
+
+exports.feedbackform = async (req,res) => {
+    console.log(req.body);
+    const c_companyname = req.body.name;
+    const c_companyemail = req.body.email;
+    const c_complaint = req.body.comments;
+
+
+    db.query('INSERT INTO complaints SET ? ',  { c_companyname:c_companyname, c_companyemail:c_companyemail, c_complaint:c_complaint},(error,results) =>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log(results);
+            res.render('feedbackrecorded')
+        }
+    })
+}

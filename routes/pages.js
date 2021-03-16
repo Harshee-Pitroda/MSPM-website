@@ -81,6 +81,14 @@ router.get("/viewinvent2", (req, res) => {
   res.render("viewinvent2");
 });
 
+router.get("/feedbackform", (req, res) => {
+  res.render("feedbackform");
+});
+
+router.get("/feedbackrecorded", (req, res) => {
+  res.render("feedbackrecorded");
+});
+
 router.get("/searchinvent", (req, res) => {
   res.render("searchinvent");
 });
