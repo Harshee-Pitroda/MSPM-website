@@ -349,3 +349,36 @@ router.get("/orderbyauthdesc", (req, res, next) => {
       console.log(rows);
     });
 });
+
+
+router.get("/orderbycompasc", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM complaints ORDER BY c_companyname";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewcomplaints", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/orderbycompdesc", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM complaints ORDER BY c_companyname DESC";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewcomplaints", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});

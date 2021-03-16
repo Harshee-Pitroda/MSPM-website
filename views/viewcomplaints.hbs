@@ -23,11 +23,12 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Company name
-          <a href="#" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
-          <a href="#" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
+          <a href="/orderbycompasc" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
+          <a href="/orderbycompdesc" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
         </th>
         <th scope="col">Company Email</th>
         <th scope="col">Complaint</th>
+        <th scope="col">Date of complaint</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
@@ -36,7 +37,8 @@
       <tr class="table-secondary">
         <th scope="row">{{item.c_companyname}}</th>
         <td><a href="mailto:{{item.c_companyemail}}" class="btn btn-dark"><i class="fas fa-envelope-square"></i> &nbsp;&nbsp;{{item.c_companyemail}}</a></td>
-        <td  style="width: 780px;">{{item.c_complaint}}</td>
+        <td  style="width: 480px;">{{item.c_complaint}}</td>
+        <td>{{item.c_dateofcomplaint}}</td>
         <td><a href="#" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a></td>
       </tr>
       {{/each}}
