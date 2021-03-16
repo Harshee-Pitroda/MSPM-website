@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <link href="/searchquotationcss.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+</head>
+
+<body>
+  <br>
+  <h1>
+    <center>Inventory List</center>
+  </h1>
+  <br>
+  <div class="cover">
+    <form class="flex-form" action="/auth/viewinvent" method="post">
+      <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?">
+      <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Company name
+          <a href="#" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
+          <a href="#" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
+        </th>
+        <th scope="col">Company Email</th>
+        <th scope="col">Complaint</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each items as |item|}}
+      <tr class="table-secondary">
+        <th scope="row">{{item.c_companyname}}</th>
+        <td>{{item.c_companyemail}}</td>
+        <td>{{item.c_complaint}}</td>
+        <td><a href="#" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -136,6 +136,16 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
+router.get("/viewcomplaints", (req, res) => {
+  var selectquery = "SELECT * FROM complaints";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("viewcomplaints", {
+      items: rows,
+    });
+  });
+});
+
 router.get("/viewauthority", (req, res) => {
   var selectquery = "SELECT * FROM add_authority";
   var query = db.query(selectquery, function (err, rows, fields) {
