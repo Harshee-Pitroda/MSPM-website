@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -14,7 +15,6 @@
     {
     p_name: {{item.p_name}},
     p_price: {{item.p_price}}
-
     }
     ]
     };
@@ -27,7 +27,7 @@
                     <div class="title1">Select the product:</div>
                     <div class="field2">
                         {{#each items as |item| }}
-                        <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}"> {{item.p_name}} {{item.p_price}}
+                        {{item.p_name}} {{item.p_price}} <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}"> 
                         {{/each}}
 
                     </div>

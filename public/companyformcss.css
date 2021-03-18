@@ -82,12 +82,12 @@ form .page .field input {
 form .page .field2 input[type="checkbox"]{
   height: 60%;
   width: 57%;
-  position: absolute;
   top: 5px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
   font-size: 18px;
+  display:inline-block;
 }
 form .page .field2 input[type="number"]{
   height: 60%;
