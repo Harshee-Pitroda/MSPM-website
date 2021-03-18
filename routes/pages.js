@@ -58,6 +58,10 @@ router.get("/chooseuser", (req, res) => {
   res.render("chooseuser");
 });
 
+router.get("/makeaquotationpt3", (req, res) => {
+  res.render("makeaquotationpt3");
+});
+
 router.get("/editinventory", (req, res) => {
   res.render("editinventory");
 });
