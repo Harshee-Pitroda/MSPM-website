@@ -27,7 +27,8 @@
                     <div class="title1">Select the product:</div>
                     <div class="field2">
                         {{#each items as |item| }}
-                        {{item.p_name}} {{item.p_price}} <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}"> 
+                        <div class="label">{{item.p_name}} </div>
+                        <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}" >
                         {{/each}}
 
                     </div>
