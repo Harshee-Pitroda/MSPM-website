@@ -2,34 +2,43 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="/companyformcss.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/companyformcss.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <header>Make a quotation Form</header>
-    <div class="form-outer">
-      <form action="#">
-        <div class="page slide-page" style="margin: 0px 120px;">
-          <div class="title">Select the company name:</div>
-          <div class="field">
-            <div class="label">Comany name</div>
-            <select>
-              {{#each items as |item| }}
-              <option>{{item.companyabv}}</option>
-               {{/each}}
-            </select>
-          </div>
-          <div class="field">
-            <button class="firstNext next">Next</button>
-          </div>
+    {{!-- {{#each items as |item| }}
+    var products = {
+    ProductGroup: [
+    {
+    p_name: {{item.p_name}},
+    p_price: {{item.p_price}}
+
+    }
+    ]
+    };
+    {{/each}} --}}
+    <div class="container">
+        <header>Make a quotation Form</header>
+        <div class="form-outer">
+            <form action="#">
+                <div class="page slide-page" style="margin: 0px 120px;">
+                    <div class="title1">Select the product:</div>
+                    <div class="field2">
+                        {{#each items as |item| }}
+                        <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}"> {{item.p_name}} {{item.p_price}}
+                        {{/each}}
+
+                    </div>
+                    <div class="field">
+                        <button class="firstNext next">Next</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  <script src="/companyformjs.js"></script>
+    <script src="/companyformjs.js"></script>
 </body>
 
 </html>

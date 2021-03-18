@@ -169,6 +169,17 @@ router.get("/makeaquotationpt1", (req, res) => {
   });
 });
 
+router.get("/makeaquotationpt2", (req, res) => {
+  var selectquery = "SELECT p_name,p_price from inventorydetails";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("makeaquotationpt2", {
+      items: rows,
+    });
+    console.log(rows);
+  });
+});
+
 
 router.get("/add1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;
