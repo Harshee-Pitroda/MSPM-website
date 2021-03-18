@@ -37,9 +37,6 @@ router.get("/inventorychoice", (req, res) => {
   res.render("inventorychoice");
 });
 
-router.get("/makeaquotation", (req, res) => {
-  res.render("makeaquotation");
-});
 
 router.get("/searchaquotation", (req, res) => {
   res.render("searchaquotation");
@@ -159,6 +156,19 @@ router.get("/viewauthority", (req, res) => {
     });
   });
 });
+
+
+router.get("/makeaquotationpt1", (req, res) => {
+  var selectquery = "SELECT companyabv from companydetails";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("makeaquotationpt1", {
+      items: rows,
+    });
+    console.log(rows);
+  });
+});
+
 
 router.get("/add1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;
