@@ -31,7 +31,7 @@ body {
 }
 .container .form-outer {
   width: 600px;
-  height: 2100px;
+  height: 400px;
   overflow: hidden;
 }
 .container .form-outer form {
@@ -68,7 +68,6 @@ body {
 .form-outer form .page .field2 .label {
   font-weight: 500;
   margin: -5px 9px -18px 0;
-  text-align: left;
 }
 form .page .field input {
   height: 100%;
@@ -88,21 +87,23 @@ span{
 form .page .field2 input[type="checkbox"]{
   height: 60%;
   width: 57%;
-  margin: -3px -214px -1px 0px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  font-size: 18px;
-  display:inline-block;
-}
-form .page .field2 input[type="number"]{
-  height: 50%;
-  width: 50px;
-  margin: 6px -214px -2px 15px;
+  margin: -3px -166px -1px 0px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
   font-size: 18px;
   display:inline-block;
+}
+form .page .field2 input[type="number"]{
+  height: 60%;
+  width: 57%;
+  position: absolute;
+  top: 5px;
+  left: 120px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
 }
 form .page .field2 input[type="text"]{
   height: 60%;
@@ -133,11 +134,11 @@ form .page .field select {
   font-weight: 500;
 }
 form .page .field button {
-  margin-top: 1910px !important;
   width: 100%;
   height: calc(100% + 5px);
   border: none;
   background: #a7a4a5 !important;
+  margin-top: 148px;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;

@@ -27,8 +27,9 @@
                     <div class="title1">Select the product:</div>
                     <div class="field2">
                         {{#each items as |item| }}
-                        <div class="label">{{item.p_name}} </div>
+                        <div class="label">{{item.p_name}} - ₹{{item.p_price}}</div>
                         <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}" >
+                        <input type="number" id="p_noproducts" name="p_noproducts" required>
                         {{/each}}
 
                     </div>
@@ -39,7 +40,6 @@
             </form>
         </div>
     </div>
-    <script src="/companyformjs.js"></script>
 </body>
 
 </html>
