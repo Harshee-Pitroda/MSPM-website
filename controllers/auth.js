@@ -305,8 +305,18 @@ exports.makeaquotationpt1 = async (req,res) => {
         else{
             console.log(results);
             res.render('next1',{companyabvq: req.body.companyabvq});
-            // var newPark = {companyabvq: companyabvq};
-            // visited.push(newPark);
         }
+    })
+}
+
+exports.makeaquotationpt2 = async (req,res) => {
+    console.log(req.body);
+    const prodcheck = (req.body.prodcheck).toString();
+
+    var updatequery = "UPDATE quotationdetails set products =?  WHERE products = 'empty'";
+    var query = db.query(updatequery,prodcheck, function(err, result) {
+        res.render('next2',{prods: req.body.prodcheck});
+        console.log("product inserted!");
+        console.log(result);
     })
 }

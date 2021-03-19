@@ -23,4 +23,6 @@ router.post('/viewcomplaints',authController.viewcomplaints);
 router.post('/companydataform',authController.companydataform);
 
 router.post('/makeaquotationpt1',authController.makeaquotationpt1);
+
+router.post('/makeaquotationpt2',authController.makeaquotationpt2);
 module.exports = router;

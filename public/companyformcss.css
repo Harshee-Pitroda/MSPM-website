@@ -56,7 +56,7 @@ body {
 .form-outer form .page .field {
   width: 330px;
   height: 45px;
-  margin: 45px 0;
+
   display: flex;
   position: relative;
 }
