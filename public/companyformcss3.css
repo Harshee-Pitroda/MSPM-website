@@ -72,11 +72,11 @@ body {
 }
 form .page .field input {
   height: 100%;
-  width: 100%;
+  width: 320px;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  padding-left: 15px;
   font-size: 18px;
+  margin: 0 0 0 0;
 }
 .clear {
   clear: both;
@@ -85,31 +85,20 @@ form .page .field input {
 span{
   white-space: pre;
 }
-form .page .field2 input[type="checkbox"]{
-  height: 60%;
-  width: 57%;
-  margin: -3px -214px -1px 0px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  font-size: 18px;
-  display:inline-block;
-}
-form .page .field2 input[type="number"]{
+
+form .page .field input[type="number"]{
   height: 50%;
-  width: 50px;
-  margin: 6px -214px -2px 15px;
+  width: 920px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
   font-size: 18px;
   display:inline-block;
 }
-form .page .field2 input[type="text"]{
+form .page .field input[type="text"]{
   height: 60%;
-  width: 70%;
-  position: absolute;
-  top: 5px;
-  left: 153px;
+  width: 920px;
+  margin: 10px -10px 10px 51px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
