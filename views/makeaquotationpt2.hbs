@@ -29,12 +29,12 @@
                         {{#each items as |item| }}
                         <div class="label">{{item.p_name}} - ₹{{item.p_price}}</div>
                         <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}" >
-                        <input type="number" id="p_noproducts" name="p_noproducts" required>
+                        <input type="number" id="p_noproducts" name="p_noproducts">
                         {{/each}}
 
                     </div>
                     <div class="field">
-                        <button class="firstNext next">Next</button>
+                        <button class="firstNext next"><a href="/makeaquotationpt3">Next</a></button>
                     </div>
                 </div>
             </form>
