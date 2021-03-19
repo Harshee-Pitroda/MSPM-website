@@ -111,6 +111,11 @@ router.get("/next1", (req, res) => {
 });
 
 
+router.get("/next3", (req, res) => {
+  res.render("next3");
+});
+
+
 router.get("/deleteinventory", (req, res) => {
   res.render("deleteinventory");
 });

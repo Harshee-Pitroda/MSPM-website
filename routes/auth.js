@@ -25,4 +25,7 @@ router.post('/companydataform',authController.companydataform);
 router.post('/makeaquotationpt1',authController.makeaquotationpt1);
 
 router.post('/makeaquotationpt2',authController.makeaquotationpt2);
+
+
+router.post('/makeaquotationpt3',authController.makeaquotationpt3);
 module.exports = router;

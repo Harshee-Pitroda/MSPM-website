@@ -320,3 +320,26 @@ exports.makeaquotationpt2 = async (req,res) => {
         console.log(result);
     })
 }
+
+exports.makeaquotationpt3 = async (req,res) => {
+    console.log(req.body);
+    const qnum = req.body.qnum;
+    const valp = req.body.valp;
+    const hsn = req.body.hsn;
+    const freightc = req.body.freightc;
+    const payt = req.body.payt;
+    const gst = req.body.gst;
+    const payc = req.body.payc;
+
+    var updatequery = "UPDATE quotationdetails set quotationnumber =?, validity =?, HSN =?, packingcharges =? , GST =? , freight =?, paymentterms =?   WHERE companynamebranch = 'empty'";
+    var query = db.query(updatequery, [qnum,valp,hsn,payc,gst,freightc,payt], function(err, result) {
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render('next3');
+            console.log("product inserted!");
+            console.log(result);
+        }
+    });
+}
