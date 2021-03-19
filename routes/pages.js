@@ -106,6 +106,10 @@ router.get("/companydataform", (req, res) => {
   res.render("companydataform");
 });
 
+router.get("/next1", (req, res) => {
+  res.render("next1");
+});
+
 
 router.get("/deleteinventory", (req, res) => {
   res.render("deleteinventory");
@@ -172,6 +176,7 @@ router.get("/makeaquotationpt1", (req, res) => {
     console.log(rows);
   });
 });
+
 
 router.get("/makeaquotationpt2", (req, res) => {
   var selectquery = "SELECT p_name,p_price from inventorydetails";

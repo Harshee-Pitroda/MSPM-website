@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { on } = require("nodemon");
 
-
+const visited = []
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -204,29 +204,6 @@ exports.updateinventory1 = (req,res) => {
 
 }
 
-// exports.deleteinventory = (req,res) => {
-//     console.log(req.body);
-//     const pu_name = req.body.pu_name;
-
-//     var selectquery = "SELECT p_name FROM inventorydetails WHERE p_name = ?";
-//     var query = db.query(selectquery, [pu_name], function(err, result) {
-//         if(err){
-//             console.log(err)
-//         }
-//         if(result.length > 0){
-//             var deletequery = "DELETE FROM inventorydetails WHERE p_name = ?";
-//             var query = db.query(deletequery,[pu_name],function(err, result) {
-//                 res.render('productdeleted')
-//                 console.log("PRODUCT DELETED!!");
-//                 console.log(result);
-//             });
-//         }
-//         else{
-//             res.status(401).render('deleteinventory1') 
-//         }
-//     });
-
-// }
 
 exports.viewinvent = (req,res) => {
     console.log(req.body);
@@ -313,6 +290,23 @@ exports.companydataform = async (req,res) => {
         else{
             console.log(results);
             res.render('companyregistered')
+        }
+    })
+}
+
+exports.makeaquotationpt1 = async (req,res) => {
+    console.log(req.body);
+    const companyabvq = req.body.companyabvq;
+
+    db.query('INSERT INTO quotationdetails SET ? ', { companyabv:companyabvq},(error,results) =>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log(results);
+            res.render('next1',{companyabvq: req.body.companyabvq});
+            // var newPark = {companyabvq: companyabvq};
+            // visited.push(newPark);
         }
     })
 }

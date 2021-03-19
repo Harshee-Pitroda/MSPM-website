@@ -17,6 +17,8 @@ const db = mysql.createConnection({
     database: 'mspm-website'
 });
 
+const visited = []
+
 const publicDirectory = path.join(__dirname, './public');
 app.use(express.static(publicDirectory));
 
