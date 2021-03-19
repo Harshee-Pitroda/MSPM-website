@@ -331,7 +331,7 @@ exports.makeaquotationpt3 = async (req,res) => {
     const gst = req.body.gst;
     const payc = req.body.payc;
 
-    var updatequery = "UPDATE quotationdetails set quotationnumber =?, validity =?, HSN =?, packingcharges =? , GST =? , freight =?, paymentterms =?   WHERE companynamebranch = 'empty'";
+    var updatequery = "UPDATE quotationdetails set quotationnumber =?, validity =?, HSN =?, packingcharges =? , GST =? , freight =?, paymentterms =?   WHERE companyaddress = 'empty'";
     var query = db.query(updatequery, [qnum,valp,hsn,payc,gst,freightc,payt], function(err, result) {
         if(err){
             console.log(err);

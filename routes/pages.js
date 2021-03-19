@@ -150,6 +150,17 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
+router.get("/quotationtable", (req, res) => {
+  var selectquery = "SELECT * FROM quotationdetails";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("quotationtable", {
+      items: rows,
+    });
+  });
+});
+
+
 router.get("/viewcomplaints", (req, res) => {
   var selectquery = "SELECT * FROM complaints";
   var query = db.query(selectquery, function (err, rows, fields) {
