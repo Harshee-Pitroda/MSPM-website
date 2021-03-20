@@ -354,9 +354,9 @@ exports.quotationtable = async (req,res) => {
             console.log(err);
         }
         else{
-            res.render('productadded');
             console.log("product inserted!");
             console.log(result);
+            res.render("productadded")
         }
     });
 }
