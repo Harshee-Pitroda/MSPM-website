@@ -151,7 +151,7 @@ router.get("/viewinvent", (req, res) => {
 });
 
 router.get("/quotationtable", (req, res) => {
-  var selectquery = "SELECT * FROM quotationdetails";
+  var selectquery = "SELECT q.companyabv,q.	products,q.quotationnumber,q.dateofq,q.validity,q.HSN,q.packingcharges,q.GST,q.	freight,q.paymentterms,c.companyadd FROM quotationdetails as q inner join companydetails as c using(companyabv)  WHERE q.companyaddress = 'empty'";
   var query = db.query(selectquery, function (err, rows, fields) {
     if (err) throw err;
     res.render("quotationtable", {

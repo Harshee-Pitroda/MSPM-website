@@ -11,9 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <table border=1 cellspacing="0">
-      {{#each items as |item|}}
+    {{#each items as |item|}}
     <tr>
         <th colspan="6"> MODI SPECIAL PURPOSE MACHINES ( P ) LTD<br>
             Factory : R 726 RABALE MIDC, T.T.C IND AREA MIDC NAVI MUMBAI 400701<br>
@@ -25,12 +26,14 @@
     <thead>
 
         <th scope="col">Quotation Number: {{item.quotationnumber}}</th>
-        <th scope="col">Date:  {{item.dateofq}}</th>
+        <th scope="col">Date: {{item.dateofq}}</th>
     </thead>
     <tbody>
         <tr>
+            <form  action="/auth/quotationtable" method="post">
             <td>
-                Address:  {{item.companyaddress}}
+                <label> Address: {{item.companyadd}}</label>
+               {{!-- <button id="addval" name="addval" value="{{item.companyadd}}"> Address: {{item.companyadd}} </button> --}}
             </td>
         </tr>
     </tbody>
@@ -40,29 +43,29 @@
     </tr>
     <thead>
 
-        <th scope="col">Quotation Number:  {{item.quotationnumber}}</th>
-        <th scope="col">Validity:  {{item.validity}}</th>
+        <th scope="col">Quotation Number: {{item.quotationnumber}}</th>
+        <th scope="col">Validity: {{item.validity}} days</th>
     </thead>
 
     <tr>
         <th colspan="6">
-            PRODUCTS AND THE PRICE  {{item.products}} <br> HSN Code  {{item.HSN}}
+            PRODUCTS AND THE PRICE : <br> {{item.products}} <br> HSN Code : <br> {{item.q.HSN}}
         </th>
 
     </tr>
 
     <tr>
-        <td colspan="2">Packing and forwarding charges  {{item.packingcharges}}%</td>
+        <td colspan="2">Packing and forwarding charges {{item.packingcharges}}%</td>
     </tr>
     <tr>
-        <td colspan="2">GST  {{item.GST}}%</td>
+        <td colspan="2">GST {{item.GST}}%</td>
     </tr>
     <tr>
-        <td colspan="2">Freight  {{item.freight}}</td>
+        <td colspan="2">Freight {{item.freight}}</td>
 
     </tr>
     <tr>
-        <td colspan="2">Payment Terms  {{item.paymentterms}}</td>
+        <td colspan="2">Payment Terms {{item.paymentterms}} days</td>
 
     </tr>
 
@@ -84,10 +87,23 @@
     </tbody>
     </td>
     </tr>
-          {{/each}}
     </tbody>
 
 
-</table>
 
+</table>
+<label>ARE YOU SURE YOU WANT THIS QUOTATION ?</label><input type="checkbox" id="addval" name="addval" value="{{item.companyadd}}"  required>
+<br>
+<button class="btn btn-primary" type="submit">DOWNLOAD</button>
+</form>
+{{!-- <script>
+$(document).ready(function(){
+	// code to read selected table row cell data (values).
+	$(".btn btn-primary").on('click',function(){
+		 var currentRow=$(this).closest("tr");
+		 var col1=currentRow.find("td:eq(0)").html();
+         });
+});
+</script> --}}
+   {{/each}}
 </html>

@@ -343,3 +343,20 @@ exports.makeaquotationpt3 = async (req,res) => {
         }
     });
 }
+
+exports.quotationtable = async (req,res) => {
+    console.log(req.body);
+    const addval = (req.body.addval).toString();
+
+    var updatequery = "UPDATE quotationdetails set  companyaddress = ?  WHERE companyaddress = 'empty'";
+    var query = db.query(updatequery,addval, function(err, result) {
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render('productadded');
+            console.log("product inserted!");
+            console.log(result);
+        }
+    });
+}
