@@ -106,6 +106,10 @@ router.get("/companydataform", (req, res) => {
   res.render("companydataform");
 });
 
+router.get("/companyadded", (req, res) => {
+  res.render("companyadded");
+});
+
 router.get("/next1", (req, res) => {
   res.render("next1");
 });

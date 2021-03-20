@@ -289,7 +289,7 @@ exports.companydataform = async (req,res) => {
         }
         else{
             console.log(results);
-            res.render('companyregistered')
+            res.render('companyadded')
         }
     })
 }
