@@ -64,7 +64,7 @@
   stroke-width: 6px;
   fill: transparent;
   stroke: #009FFD;
-  stroke-dasharray: 85 400;
+  stroke-dasharray: 95 400;
   stroke-dashoffset: -220;
   transition: 1s all ease;
 }
