@@ -356,7 +356,7 @@ exports.quotationtable = async (req,res) => {
         else{
             console.log("product inserted!");
             console.log(result);
-            res.render("productadded")
+            res.render("quotationadded")
         }
     });
 }

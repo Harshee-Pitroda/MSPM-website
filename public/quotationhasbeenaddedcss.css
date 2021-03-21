@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/qbg.jpg);
+    background-size: 100% 100%;
+    position: relative;
+  }
+  
+  .btn{
+    position: absolute;
+    left: 33%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background: none;
+    color: rgb(17, 16, 16);
+    font-size: 30px;
+    position: relative;
+  }
+  
+  .line{
+    position: relative;
+  }
+  
+  .line::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: rgb(27, 27, 27);
+     transition: width .5s ;
+  }
+  
+  .line:hover::before{
+    width: 100%;
+    transition: width .5s ;
+  }
+  
+  .dot{
+    position: relative;
+  }
+  
+  .dot::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: -10px;
+    background: rgb(22, 22, 22);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  
+  .dot:hover::after{
+    opacity: 1;
+  }

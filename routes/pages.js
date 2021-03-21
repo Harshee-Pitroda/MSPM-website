@@ -98,6 +98,10 @@ router.get("/adminlogin", (req, res) => {
   res.render("adminlogin");
 });
 
+router.get("/quotationadded", (req, res) => {
+  res.render("quotationadded");
+});
+
 router.get("/adminlogin1", (req, res) => {
   res.render("adminlogin1");
 });
