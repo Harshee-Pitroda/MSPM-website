@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/companyformcss2.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>QUOTATION FORM </header>
+        <div class="form-outer">
+            <form action="/auth/makeaquotationrough" method="post">
+                <div class="page slide-page" style="margin: 16px 120px;">
+                    <div class="title">Select the company name :</div>
+                    <div class="field">
+                        <br>
+                        <select name="companyabvq">
+                            {{#each items as |item| }}
+                            <option value="{{item.companyabv}}">{{item.companyabv}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label class="label">ENTER THE NUMBER OF PRODUCTS</label>
+                        <input type="number" id="count" name="count" required>
+                        {{#each count}}
+                            <select name="pname">
+                            {{#each items as |item| }}
+                                <option value="{{item.p_name}}">{{item.p_name}}</option>
+                            {{/each}}
+                        {{/each}}
+                    </div>
+                    <div class="field">
+                        <button class="firstNext next" type="submit" onclick="pass()">Next</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

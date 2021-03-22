@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/companyformcss2.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>QUOTATION FORM </header>
+    <h2>{{ companyabvq }}</h2>
+    <div class="form-outer">
+      <form action="/auth/makeaquotationpt1" method="post">
+        <div class="page slide-page" style="margin: 16px 120px;">
+                <input type="text" id="cname" name="cname" value="{{ companyabvq }}">
+          <div class="title">Select the product name :</div>
+          <div class="field">
+            <br>
+            <select name="pname">
+              {{#each items as |item| }}
+              <option value="{{item.p_name}}">{{item.p_name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="field">
+            <button class="firstNext next" type="submit" onclick="pass()">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
