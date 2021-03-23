@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/companyformcss.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script>
+        var x = 0;
+        var span = document.querySelector('span'); // find the <span> element in the DOM
+        var increment = document.getElementById('increment'); // find the element with the ID 'increment'
+        var decrement = document.getElementById('decrement'); // find the element with the ID 'decrement'
+
+        increment.addEventListener('click', function () {
+            // this function is executed whenever the user clicks the increment button
+            span.textContent = x++;
+        });
+
+        decrement.addEventListener('click', function () {
+            // this function is executed whenever the user clicks the decrement button
+            span.textContent = x--;
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>Make a quotation Form</header>
+        <div class="form-outer">
+            <form action="/auth/makeaquotationpt2" method="post" id="q-form">
+                <div class="page slide-page" style="margin: 0px 120px;">
+                    <div class="title1">Select the product:</div>
+                    <div class="field2">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Company</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Price</th>
+                                    <th scope="col">Action</th>
+                                    {{!-- <th scope="col">Quantity</th>
+                                    <th scope="col">inc/dec</th> --}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{#each items as |item| }}
+                                    <th scope="row">{{item.companyabv}}<h5 style="color:white">{{item.q_id}}</h5>
+                                    </th>
+                                    <th scope="row">{{item.p_name}}</th>
+                                    <th scope="row">{{item.p_price}}</th>
+                                    <th><a href="/addprodq/{{item.p_name}}/{{item.p_price}}/{{item.companyabv}}/{{item.q_id}}"
+                                            class="btn btn-primary">ADD TO QUOTATION <i class="fas fa-plus-circle"></i></a></th>
+                                    {{!-- <th scope="row">{{item.p_qty}}</th>
+                                    <th><a href="/addq/{{item.p_name}}" class="btn btn-primary "><i
+                                                class="fas fa-plus-circle" id="increment"></i></a>
+                                        <a href="/deleteq/{{item.p_name}}" class="btn btn-danger "><i
+                                                class="fas fa-minus-circle" id="decrement"></i></a>
+                                    </th> --}}
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="field" style="width: 600px;">
+                        <button type="submit" id="submit" class="firstNext next"><a href="/makeq3" style="color: white;">Next</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </script>
+
+</body>
+
+</html>

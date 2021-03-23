@@ -54,9 +54,8 @@ body {
   margin: 10px 20px !important;
 }
 .form-outer form .page .field {
-  width: 330px;
-  height: 45px;
-  margin: 45px 0;
+  height: 25px;
+  margin: 21px 0;
   display: flex;
   position: relative;
 }
@@ -128,7 +127,6 @@ form .page .field2 input[type="date"]{
   font-size: 18px;
 }
 form .page .field select {
-  width: 100%;
   padding-left: 10px;
   font-size: 17px;
   font-weight: 500;

@@ -9,16 +9,6 @@
 </head>
 
 <body>
-    {{!-- {{#each items as |item| }}
-    var products = {
-    ProductGroup: [
-    {
-    p_name: {{item.p_name}},
-    p_price: {{item.p_price}}
-    }
-    ]
-    };
-    {{/each}} --}}
     <div class="container">
         <header>Make a quotation Form</header>
         <div class="form-outer">
@@ -28,8 +18,7 @@
                     <div class="field2">
                         {{#each items as |item| }}
                         <div class="label">{{item.p_name}} - ₹{{item.p_price}}</div>
-                        <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}-{{item.p_price}}" >
-                        {{!-- <input type="number" id="p_noproducts" name="p_noproducts"> --}}
+                        <input type="checkbox" id="prodcheck" name="prodcheck" value="{{item.p_name}}" >
                         {{/each}}
 
                     </div>

@@ -1,0 +1,16 @@
+body{
+    color: white !important;
+}
+th{
+    color: black !important;
+}
+th input[type=checkbox]{
+	border: 1px solid #000000 !important;
+    appearance: auto !important;
+}
+input[type=checkbox]{
+    background-color: #fff !important;
+    appearance: none;
+    border: none;
+    outline: none;
+}

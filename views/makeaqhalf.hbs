@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/companyformcss2.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>Make a quotation Form</header>
+        <div class="form-outer">
+            <form id="q-form">
+            {{!-- {{#each names as |item|}}
+            <input type="number" id="cname" name="cname" value="{{item.companyabv}}" placeholder="{{item.companyabv}}">
+            {{/each}} --}}
+                <div class="page slide-page" style="margin: 0px 120px;">
+                    <div class="title1">ENTER THE QUANTITY:</div>
+                    <div class="field2">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Product name</th>
+                                    <th scope="col">Number of products</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{#each items as |item|}}
+                                    <th scope="row">{{item.prod}}</th>
+                                    {{/each}}
+                                </tr>
+                                <tr>
+                                    <th scope="row">try</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="field">
+                        <button type="submit" id="submit" class="firstNext next">Next</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </script>
+
+</body>
+
+</html>

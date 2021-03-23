@@ -30,8 +30,8 @@ body {
   margin: 0 0 30px 0;
 }
 .container .form-outer {
-  width: 600px;
-  height: 2150px;
+  width: 1000px;
+  height: 5150px;
   overflow: hidden;
 }
 .container .form-outer form {
@@ -56,14 +56,13 @@ body {
 .form-outer form .page .field {
   width: 330px;
   height: 45px;
-
   display: flex;
   position: relative;
 }
 .form-outer form .page .field2 {
-  width: 330px;
-  height: 45px;
-  margin: -10px 0px;
+  width: 803px;
+  height: 62px;
+  margin: -10px 0px 0px 26px;
 }
 .form-outer form .page .field2 .label {
   font-weight: 500;
@@ -97,7 +96,7 @@ form .page .field2 input[type="checkbox"]{
 form .page .field2 input[type="number"]{
   height: 50%;
   width: 50px;
-  margin: 6px -214px -2px 15px;
+  margin: 2px -214px -13px -209px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
@@ -105,15 +104,14 @@ form .page .field2 input[type="number"]{
   display:inline-block;
 }
 form .page .field2 input[type="text"]{
-  height: 60%;
-  width: 57%;
-  position: absolute;
-  top: 5px;
-  left: 153px;
+  height: 50%;
+  width: 50px;
+  margin: 6px -214px -2px 15px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
   font-size: 18px;
+  display:inline-block;
 }
 form .page .field2 input[type="date"]{
   height: 60%;
@@ -133,7 +131,8 @@ form .page .field select {
   font-weight: 500;
 }
 form .page .field button {
-  margin-top: 1960px !important;
+  margin-top: 4960px !important;
+  margin-left: 120px !important;
   width: 100%;
   height: calc(100% + 5px);
   border: none;
@@ -240,4 +239,9 @@ form .page .btns button.next {
 .progress-bar .step .check.active {
   display: block;
   color: #fff;
+}
+
+tr{
+  font-size:15px;
+  margin: 0 0 0 0;
 }

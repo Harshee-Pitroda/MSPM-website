@@ -29,5 +29,6 @@ router.post('/makeaquotationpt2',authController.makeaquotationpt2);
 
 router.post('/makeaquotationpt3',authController.makeaquotationpt3);
 
+
 router.post('/quotationtable',authController.quotationtable);
 module.exports = router;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/companyformcss2.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <style>
+      a{
+        pointer:cursor;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>QUOTATION FORM </header>
+    <div class="form-outer">
+      <form action="/auth/makeaquotationpt1" method="post">
+        <div class="page slide-page" style="margin: 16px 120px;">
+          <div class="title">Select the quantity :</div>
+          <div class="field">
+                        <table class="table" style="border: 1px black solid;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">inc/dec</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{#each items as |item| }}
+                                    <th scope="row">{{item.p_name}}</th>
+                                    <th scope="row">{{item.p_price}}</th>
+                                    <th scope="row">{{item.p_qty}}</th>
+                                    <th><a href="/addq/{{item.p_name}}" class="btn btn-primary "><i
+                                                class="fas fa-plus-circle" id="increment"></i></a>
+                                        <a href="/deleteq/{{item.p_name}}" class="btn btn-danger "><i
+                                                class="fas fa-minus-circle" id="decrement"></i></a>
+                                    </th>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+          </div>
+          <div class="field">
+            <button class="firstNext next" type="submit" style="width: 120px; margin: 204px 4px 4px 99px;"><a href="/makeaquotationpt3" style="color: white;">Next</a></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

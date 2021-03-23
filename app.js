@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 var session  = require('express-session');
 var flash = require('connect-flash');
 var engines = require('consolidate');
+var exphbs  = require('express-handlebars');
 
 dotenv.config({ path: './.env'});
 
@@ -27,9 +28,12 @@ app.use(express.json());
 
 // app.engine('handlebars', engines.handlebars);
 // app.engine('pug', engines.pug);
-app.set('view engine','hbs');
+
 // app.set('view engine', 'pug');
 // app.set('views','./views');
+
+
+app.set('view engine','hbs');
 
 db.connect((error) => {
     if(error){

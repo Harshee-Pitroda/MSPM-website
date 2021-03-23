@@ -2,11 +2,15 @@ const express = require("express");
 const mysql = require("mysql");
 const router = express.Router();
 var userModel = require("../controllers/auth");
+var exphbs  = require('express-handlebars');
+
+
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "mspm-website",
+  multipleStatements: true
 });
 
 router.get("/", (req, res) => {
@@ -158,14 +162,25 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
-router.get("/quotationtable", (req, res) => {
-  var selectquery = "SELECT q.companyabv,q.	products,q.quotationnumber,q.dateofq,q.validity,q.HSN,q.packingcharges,q.GST,q.	freight,q.paymentterms,c.companyadd FROM quotationdetails as q inner join companydetails as c using(companyabv)  WHERE q.companyaddress = 'empty'";
-  var query = db.query(selectquery, function (err, rows, fields) {
-    if (err) throw err;
-    res.render("quotationtable", {
-      items: rows,
-    });
-  });
+router.get("/quotationtable", (req, res) => { 
+  var selectquery = "SELECT q.companyabv,q.quotationnumber,DATE(q.dateofq) as dateofq,q.validity,q.HSN,q.packingcharges,q.GST,q.freight,q.paymentterms,c.companyadd,m.p_name,m.p_price,m.p_qty FROM quotationdetails as q inner join companydetails as c using(companyabv) inner join companyprodmultivalued as m using(companyabv) WHERE q.companyaddress = 'empty' AND q.q_id=m.q_id";
+  var query = db.query(selectquery,function (err, rows, fields) {
+    if (err){ console.log(err)}
+    else{
+      res.render("quotationtable", {
+        items: rows,
+      });
+//       var selectquery2 = "SELECT p_name,p_price,p_qty FROM companyprodmultivalued WHERE companyabv='APPLE-USA'";
+//       var query = db.query(selectquery2, function (err, rows, fields) {
+//       if (err){ console.log(err)}
+//       else{
+//       res.render("quotationtable", {
+//         prods: rows,
+//       });
+//     }
+// });
+}
+});
 });
 
 
@@ -213,6 +228,19 @@ router.get("/makeaquotationpt2", (req, res) => {
   });
 });
 
+router.get("/makeq2", (req, res) => {
+  var selq = "SELECT q.companyabv,q.q_id,p.p_name,p.p_price FROM quotationdetails as q inner join inventorydetails as p  using(m_company) WHERE q.companyaddress='empty'";
+  var query = db.query(selq,[2, 1], function (err, rows, fields) {
+    if (err) throw err;
+    else{
+      res.render("makeq2", {
+        items: rows,
+      })
+    }
+    console.log(rows);
+  });
+});
+
 
 router.get("/add1/:p_name", (req, res, next) => {
   let pname = req.params.p_name;
@@ -256,6 +284,58 @@ router.get("/delete1/:p_name", (req, res, next) => {
     }
   });
 });
+
+router.get("/addq/:p_name", (req, res, next) => {
+  let pname = req.params.p_name;
+  var add1query =
+    "UPDATE companyprodmultivalued set p_qty = (p_qty+1) WHERE p_name = ?";
+  var query = db.query(add1query,pname, function (err, rows, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      var selectquery = "SELECT q.companyabv,q.p_name,q.p_price,q.p_qty,q.q_id FROM companyprodmultivalued as q INNER JOIN quotationdetails m using(q_id) WHERE m.companyaddress='empty'";
+      var query = db.query(selectquery, function (err, rows, fields) {
+        if (err) throw err;
+        res.render("makeq3", {
+          items: rows,
+        });
+      });
+    }
+  });
+});
+
+
+router.get("/deleteq/:p_name", (req, res, next) => {
+  let pname = req.params.p_name;
+  let p_noproducts = parseFloat(req.params.p_noproducts);
+  let p_price = parseFloat(req.params.p_price);
+  var add1query =
+  "UPDATE companyprodmultivalued set p_qty = (p_qty-1) WHERE p_name = ?";
+  var query = db.query(add1query, [pname], function (err, rows, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      var selectquery = "SELECT q.companyabv,q.p_name,q.p_price,q.p_qty,q.q_id FROM companyprodmultivalued as q INNER JOIN quotationdetails m using(q_id) WHERE m.companyaddress='empty'";
+      var query = db.query(selectquery, function (err, rows, fields) {
+        if (err) throw err;
+        res.render("makeq3", {
+          items: rows,
+        });
+      });
+    }
+  });
+});
+
+router.get("/makeq3", (req, res) => {
+  var selectquery = "SELECT q.companyabv,q.p_name,q.p_price,q.p_qty,q.q_id FROM companyprodmultivalued as q INNER JOIN quotationdetails m using(q_id) WHERE m.companyaddress='empty'";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("makeq3", {
+      items: rows,
+    });
+  });
+});
+
 
 router.get("/nopless10", (req, res, next) => {
   console.log(req.body);
@@ -440,3 +520,59 @@ router.get("/orderbycompdesc", (req, res, next) => {
       console.log(rows);
     });
 });
+
+router.get("/makeaqhalf", (req, res) => {
+  var selectquery = "SELECT companyabv FROM quotationdetails WHERE companyaddress = 'empty' ";
+  var query = db.query("CALL getprod1(?)",'COMPANY1-MUMBAI', function (err, rows, fields) {
+    if (err) {console.log(err);}
+    else{
+    res.render("makeaqhalf", {
+      items: rows,
+    });
+    
+console.log(rows);
+var query = db.query("CALL getprod2(?)",'COMPANY1-MUMBAI', function (err, rows, fields) {
+  if (err) {console.log(err);}
+  else{
+  res.render("makeaqhalf", {
+    items: rows,
+  });
+  
+console.log(rows);
+}
+});
+  }
+  });
+});
+
+
+router.get("/addprodq/:p_name/:p_price/:companyabv/:q_id", (req, res, next) => {
+  console.log(req.body);
+  let pname = req.params.p_name;
+  let cn = req.params.companyabv;
+  let p_price = (req.params.p_price);
+  let q_id = (req.params.q_id);
+  console.log(p_price);
+  console.log(pname);
+  db.query(
+    "INSERT INTO companyprodmultivalued SET ? ",
+    {
+      companyabv: cn,
+      p_name: pname,
+      p_price: p_price,
+      q_id: q_id,
+    },
+    function (err, rows, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        var selectquery = "SELECT q.companyabv,q.q_id,p.p_name,p.p_price FROM quotationdetails as q inner join  inventorydetails as p using(m_company) WHERE q.companyaddress='empty'";
+        var query = db.query(selectquery, function (err, rows, fields) {
+          if (err) throw err;
+          res.render("makeq2", {
+            items: rows,
+          });
+        });
+      }
+    });
+  });
