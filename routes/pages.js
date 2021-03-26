@@ -78,6 +78,10 @@ router.get("/updateinventory1", (req, res) => {
   res.render("updateinventory1");
 });
 
+router.get("/searchchoice", (req, res) => {
+  res.render("searchchoice");
+});
+
 router.get("/addperson", (req, res) => {
   res.render("addperson");
 });
