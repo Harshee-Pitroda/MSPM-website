@@ -166,6 +166,48 @@ router.get("/viewinvent", (req, res) => {
   });
 });
 
+router.get("/searchproducts", (req, res) => {
+  var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("searchproducts", {
+      items: rows,
+    });
+  });
+});
+
+router.get("/orderbyprodasc", (req, res, next) => {
+  console.log(req.body);
+  var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued ORDER BY companyabv";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("searchproducts", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/orderbyproddesc", (req, res, next) => {
+  console.log(req.body);
+  var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued ORDER BY companyabv desc";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("searchproducts", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
 router.get("/quotationtable", (req, res) => { 
   var selectquery = "SELECT q.companyabv,q.quotationnumber,DATE(q.dateofq) as dateofq,q.validity,q.HSN,q.packingcharges,q.GST,q.freight,q.paymentterms,c.companyadd,m.p_name,m.p_price,m.p_qty FROM quotationdetails as q inner join companydetails as c using(companyabv) inner join companyprodmultivalued as m using(companyabv) WHERE q.companyaddress = 'empty' AND q.q_id=m.q_id";
   var query = db.query(selectquery,function (err, rows, fields) {

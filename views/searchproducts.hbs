@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <link href="/searchquotationcss.css" rel="stylesheet">
+  <link href="/atagcss.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <br>
+  <h1>
+    <center>Products List</center>
+  </h1>
+  <br>
+  {{!-- <form class="flex-form" action="/auth/viewinvent" method="post" style="margin: 0  0 0 500px;">
+    <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?">
+    <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
+  </form> --}}
+  <div style="margin: 0 0 0 600px;">
+    <h4> ACTIONS : </h4>
+    <div class="page">
+      <a href="#" class="r-link link text-underlined">View chart</a>
+    </div>
+    <div class="page">
+      <a href="#" class="r-link link text-underlined">Search by company name</a>
+    </div>
+    <div class="page">
+      <a href="#" class="r-link link text-underlined">Search by product name</a>
+    </div>
+  </div>
+  <br>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Company name
+          <a href="/orderbyprodasc" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
+          <a href="/orderbyproddesc" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
+        </th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Product Quantity</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each items as |item|}}
+      <tr class="table-info">
+        <th scope="row">{{item.companyabv}}</th>
+        <td>{{item.p_name}}</td>
+        <td>{{item.p_price}}</td>
+        <td>{{item.p_qty}}</td>
+        <td>{{item.tp}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+
+</html>
