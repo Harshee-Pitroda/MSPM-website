@@ -2,9 +2,11 @@
 
 <head>
   <link href="/searchquotationcss.css" rel="stylesheet">
+  <link href="/atagcss.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 </head>
 
@@ -14,80 +16,57 @@
     <center>Inventory List</center>
   </h1>
   <br>
-  <div class="cover">
-    <form class="flex-form" action="/auth/viewinvent" method="post">
+    <form class="flex-form" action="/auth/viewinvent" method="post" style="margin: 0  0 0 500px;">
       <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?">
       <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
     </form>
-    <div id="workarea">
-      <div class="position">
-          <div class="svg-wrapper">
-            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape" height="40" width="150" />
-              <div id="text">
-                 <a href="/nopless10"><span class="spot"></span>Products less than 10</a>
-              </div>
-            </svg>
-          </div>
-          <!--Next button -->
-          <div id="workarea" style="margin: -54px 18px 24px 174px;">
-          <div class="svg-wrapper">
-            <svg height="35" width="150" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape" height="35" width="150" />
-              <div id="text">
-                <a href="/pmax"><span class="spot"></span>Product with maximum price</a>
-              </div>
-            </svg>
-          </div>
-          </div>
-          <div id="workarea" style="margin: -84px 29px 35px 343px;">
-          <div class="svg-wrapper">
-            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape" height="40" width="150" />
-              <div id="text">
-                <a href="/pmin"><span class="spot"></span>Product with minimum price</a>
-              </div>
-            </svg>
-          </div>
-          </div>
-      </div>
+    <br>
+    <div style="margin: 0 0 0 600px;">
+    <div class="page">
+      <a href="/nopless10" class="r-link link text-underlined">Products less than 10</a>
     </div>
-  </div>
-  <br>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Product Name
-          <a href="/orderbyinventasc" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
-          <a href="/orderbyinventdesc" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
-        </th>
-        <th scope="col">Product Price</th>
-        <th scope="col">Number of products</th>
-        <th scope="col">Add/Delete</th>
-        <th scope="col">Side notes</th>
-        <th scope="col">Total Price</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each items as |item|}}
-      <tr>
-        <th scope="row">{{item.p_name}}</th>
-        <td>{{item.p_price}}</td>
-        <td>{{item.p_noproducts}}</td>
-        <td><a href="/add1/{{item.p_name}}" class="btn btn-primary "><i class="fas fa-plus-circle"></i></a>
-          <a href="/delete1/{{item.p_name}}" class="btn btn-danger "><i class="fas fa-minus-circle"></i></a>
-        </td>
-        <td>{{item.p_sidenote}}</td>
-        <td>{{item.p_totalprice}}</td>
-        <td>
-          <a href="/updateinventory" class="btn btn-primary ">Update <i class="fas fa-pen"></i></a>
-          <a href="/deleteitem/{{item.p_name}}" class="btn btn-danger ">Delete <i class="fas fa-trash-alt"></i></a>
-        </td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
+    <div class="page">
+      <a href="/pmax" class="r-link link text-underlined">Product with maximum price</a>
+    </div>
+    <div class="page">
+      <a href="/pmin" class="r-link link text-underlined">Product with minimum price</a>
+    </div>
+    </div>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Product Name
+            <a href="/orderbyinventasc" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
+            <a href="/orderbyinventdesc" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
+          </th>
+          <th scope="col">Product Price</th>
+          <th scope="col">Number of products</th>
+          <th scope="col">Add/Delete</th>
+          <th scope="col">Side notes</th>
+          <th scope="col">Total Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items as |item|}}
+        <tr>
+          <th scope="row">{{item.p_name}}</th>
+          <td>{{item.p_price}}</td>
+          <td>{{item.p_noproducts}}</td>
+          <td><a href="/add1/{{item.p_name}}" class="btn btn-primary "><i class="fas fa-plus-circle"></i></a>
+            <a href="/delete1/{{item.p_name}}" class="btn btn-danger "><i class="fas fa-minus-circle"></i></a>
+          </td>
+          <td>{{item.p_sidenote}}</td>
+          <td>{{item.p_totalprice}}</td>
+          <td>
+            <a href="/updateinventory" class="btn btn-primary ">Update <i class="fas fa-pen"></i></a>
+            <a href="/deleteitem/{{item.p_name}}" class="btn btn-danger ">Delete <i class="fas fa-trash-alt"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
 </body>
 
 </html>
