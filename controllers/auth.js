@@ -285,6 +285,47 @@ exports.viewinvent = (req, res) => {
   );
 };
 
+exports.searchprodname = (req, res) => {
+  console.log(req.body);
+  const search_name = req.body.search_name;
+  var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued WHERE p_name= ?";
+  var query = db.query(
+    selectquery,
+    [search_name],
+    function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("searchproducts", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    }
+  );
+};
+
+exports.searchcompanyname = (req, res) => {
+  console.log(req.body);
+  const search_name = req.body.search_name;
+  var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued WHERE companyabv= ?";
+  var query = db.query(
+    selectquery,
+    [search_name],
+    function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("searchproducts", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    }
+  );
+};
+
+
 exports.viewauthority = (req, res) => {
   console.log(req.body);
   const search_name = req.body.search_name;

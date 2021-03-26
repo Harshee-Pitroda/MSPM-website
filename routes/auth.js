@@ -18,6 +18,9 @@ router.post('/viewauthority',authController.viewauthority);
 
 router.post('/feedbackform',authController.feedbackform);
 
+router.post('/searchprodname',authController.searchprodname);
+router.post('/searchcompanyname',authController.searchcompanyname);
+
 router.post('/viewcomplaints',authController.viewcomplaints);
 
 router.post('/companydataform',authController.companydataform);

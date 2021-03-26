@@ -148,12 +148,21 @@ router.get("/productadded", (req, res) => {
   res.render("productadded");
 });
 
+router.get("/searchcompanyname", (req, res) => {
+  res.render("searchcompanyname");
+});
+
+
 router.get("/authorityadded", (req, res) => {
   res.render("authorityadded");
 });
 
 router.get("/companyregistered", (req, res) => {
   res.render("companyregistered");
+});
+
+router.get("/searchprodname", (req, res) => {
+  res.render("searchprodname");
 });
 
 router.get("/viewinvent", (req, res) => {
