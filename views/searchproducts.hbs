@@ -2,11 +2,16 @@
 
 <head>
   <link href="/searchquotationcss.css" rel="stylesheet">
+  {{!-- <script src="/chart.js"></script> --}}
   <link href="/atagcss.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+      <script src = "https://code.highcharts.com/highcharts.js"></script> 
+      <script src = "https://code.highcharts.com/modules/data.js"></script>
 
 </head>
 
@@ -36,7 +41,8 @@
     </div>
   </div>
   <br>
-  <table class="table table-striped">
+  
+  <table class="table table-striped" id = "datatable">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Company name
@@ -61,6 +67,7 @@
       {{/each}}
     </tbody>
   </table>
+
 </body>
 
 </html>

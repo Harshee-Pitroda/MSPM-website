@@ -3,6 +3,7 @@ const mysql = require("mysql");
 const router = express.Router();
 var userModel = require("../controllers/auth");
 var exphbs  = require('express-handlebars');
+var Chart = require('chart.js');
 
 
 const db = mysql.createConnection({
@@ -152,6 +153,19 @@ router.get("/searchcompanyname", (req, res) => {
   res.render("searchcompanyname");
 });
 
+// router.get("/chart", (req, res) => {
+//   res.render("chart");
+// });
+
+router.get("/chart", (req, res) => {
+  selectquery = "SELECT p_name,p_qty FROM companyprodmultivalued ORDER BY p_name";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("chart", {
+      data: JSON.stringify(rows),
+    });
+  });
+});
 
 router.get("/authorityadded", (req, res) => {
   res.render("authorityadded");
@@ -216,6 +230,50 @@ router.get("/orderbyproddesc", (req, res, next) => {
       console.log(rows);
     });
 });
+
+router.get("/searchq", (req, res) => {
+  var selectquery = "SELECT * FROM quotationdetails";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("searchq", {
+      items: rows,
+    });
+  });
+});
+
+router.get("/orderbyqasc", (req, res, next) => {
+  console.log(req.body);
+  var selectquery = "SELECT * FROM quotationdetails ORDER BY companyabv";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("searchq", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/orderbyqdesc", (req, res, next) => {
+  console.log(req.body);
+  var selectquery = "SELECT * FROM quotationdetails ORDER BY companyabv desc";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("searchq", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+
 
 router.get("/quotationtable", (req, res) => { 
   var selectquery = "SELECT q.companyabv,q.quotationnumber,DATE(q.dateofq) as dateofq,q.validity,q.HSN,q.packingcharges,q.GST,q.freight,q.paymentterms,c.companyadd,m.p_name,m.p_price,m.p_qty FROM quotationdetails as q inner join companydetails as c using(companyabv) inner join companyprodmultivalued as m using(companyabv) WHERE q.companyaddress = 'empty' AND q.q_id=m.q_id";
@@ -630,4 +688,16 @@ router.get("/addprodq/:p_name/:p_price/:companyabv/:q_id", (req, res, next) => {
         });
       }
     });
+  });
+
+
+  router.get("/viewqprod/:q_id", (req, res, next) => {
+    let id = req.params.q_id;
+    var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued WHERE q_id=?";
+  var query = db.query(selectquery, [id], function (err, rows, fields) {
+    if (err) throw err;
+    res.render("searchproducts", {
+      items: rows,
+    });
+  });
   });
