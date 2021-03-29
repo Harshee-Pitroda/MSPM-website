@@ -1,19 +1,25 @@
 <head>
     <link href="/chooseadmincss.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>CHOOSE</title>
     <style>
         a{
-            color: rgb(0, 0, 0);
+            color: rgb(0, 0, 0) !important;
         }
     </style>
 </head>
-<body style="background-color: black;">
-<ul>
-  <li><a href="/inventorychoice">INVENTORY</a></li>
-  <li><a href="/makeaquotationpt1">MAKE A QUOTATION</a></li>
-<li><a href="/searchchoice">SEARCH A QUOTATION</a></li>
-  <li><a href="/viewcomplaints">VIEW COMPLAINTS</a></li>
-  <li><a href="/chooseperson">ADD AN AUTHORITY</a></li>
-  <li><a href="/companydataform">ADD A COMPANY</a></li>
-    <li><a href="/viewemployeedata">VIEW EMPLOYEE DATA</a></li>
+<body style="background-color: black;overflow:hidden;">
+   <a href="/loginchoice" class="btn btn-danger" style="width: 80px;margin: -660px 1320px 0px 0;"><i class="fas fa-arrow-circle-left"></i> Back</a>
+    <a href="/adminlogin" class="btn btn-info" style="width: 100px;margin: -650px 0 0 0;"><i class="fas fa-sign-out-alt"></i></i> Logout</a>
+<ul style="position: absolute;">
+  <li><a href="/inventorychoice"><i class="fas fa-dolly-flatbed"></i> INVENTORY</a></li>
+  <li><a href="/makeaquotationpt1">MAKE A QUOTATION <i class="fas fa-pen"></i> </a></li>
+<li><a href="/searchchoice"><i class="fas fa-search"></i> SEARCH A QUOTATION</a></li>
+  <li><a href="/viewcomplaints">VIEW COMPLAINTS <i class="fas fa-times-circle"></i></a></li>
+  <li><a href="/chooseperson"><i class="fas fa-user-plus"></i> ADD AN AUTHORITY</a></li>
+  <li><a href="/companydataform">ADD A COMPANY <i class="fas fa-network-wired"></i></a></li>
+    <li><a href="/viewemployeedata"><i class="fas fa-eye"></i> VIEW EMPLOYEE DATA</a></li>
 </ul>
 </body>

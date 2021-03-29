@@ -19,7 +19,7 @@
   }
   
   
-  .container {
+  .container2 {
     background: rgb(29, 29, 31);
     width: 90vh;
     height: 90vh;
@@ -42,7 +42,7 @@
     font-size: 1.7em;
     color: coral;
   }
-  .container:before {
+  .container2:before {
     content: "";
     display: block;
     position: absolute;
