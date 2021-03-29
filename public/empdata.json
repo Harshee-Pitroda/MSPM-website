@@ -1,0 +1,60 @@
+{
+  "page": 1,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+        "name": "Harshee Pitroda",
+        "address": "xyz",
+        "gender": "Female",
+        "designation": "admin",
+        "dob": "10/29/02",
+        "bg": "B-"
+    },
+    {
+        "name": "tvisha modi",
+        "address": "abc",
+        "gender": "Female",
+        "designation": "admin",
+        "dob": "12/31/02",
+        "bg": "A+"
+    },
+    {
+        "name": "juhi patel",
+        "address": "qwe",
+        "gender": "Female",
+        "designation": "accounts",
+        "dob": "6/27/02",
+        "bg": "B+"
+    },
+    {
+        "name": "priya mastram",
+        "address": "ghe",
+        "gender": "Female",
+        "designation": "accounts",
+        "dob": "01/23/02",
+        "bg": "B-"
+    },
+    {
+        "name": "sapnit shetty",
+        "address": "gnkf",
+        "gender": "Male",
+        "designation": "Office",
+        "dob": "12/09/02",
+        "bg": "B+"
+    },
+    {
+        "name": "Krish mastram",
+        "address": "jfg",
+        "gender": "Male",
+        "designation": "Office",
+        "dob": "11/13/02",
+        "bg": "B+"
+    }
+  ],
+  "support": {
+    "url": "https://reqres.in/#support-heading",
+    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+  }
+}

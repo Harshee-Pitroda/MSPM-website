@@ -30,6 +30,11 @@ router.get("/stats", (req, res) => {
   res.render("stats");
 });
 
+router.get("/viewemployeedata", (req, res) => {
+  res.render("viewemployeedata");
+});
+
+
 router.get("/loginchoice", (req, res) => {
   res.render("loginchoice");
 });
