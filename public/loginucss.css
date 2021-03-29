@@ -6,7 +6,6 @@
 
 section{
 	font-size:3rem;
-	position:relative;
 	height:100vh;
 }
 
@@ -50,7 +49,7 @@ section{
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.4em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 25px;
+    margin-left: 14px;
 }
 
 .email-input-list {
@@ -127,17 +126,17 @@ h1 {
 
 .card {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 700px;
-    border-radius: 30px;
-    background: linear-gradient(132.23deg, rgba(78, 223, 255, 0.512) 2.32%, rgba(255, 255, 255, 0.10) 109.87%);
-    transform:translate(-50%,-50%);
-    backdrop-filter: blur(26px) saturate(100%) contrast(80%) brightness(90%);
-    -webkit-backdrop-filter: blur(26px) saturate(100%) contrast(80%) brightness(90%);
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.14);
-    overflow: hidden;
+    top: 50% !important;
+    left: 50% !important;
+    width: 500px !important;
+    height: 700px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(132.23deg, rgba(78, 223, 255, 0.512) 2.32%, rgba(255, 255, 255, 0.10) 109.87%) !important;
+    transform:translate(-50%,-50%) !important;
+    backdrop-filter: blur(26px) saturate(100%) contrast(80%) brightness(90%) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(100%) contrast(80%) brightness(90%) !important;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.14) !important;
+    overflow: hidden !important;
 }
 
 

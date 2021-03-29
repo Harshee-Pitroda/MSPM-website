@@ -3,14 +3,16 @@
         <title>User Login</title>
         <link rel="stylesheet" href="/loginucss.css" />
         <script src="/loginujs.js"></script>
-
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     </head>
 
-
+<body>
 <div id="particles-js">
+    <a href="/loginchoice" class="btn btn-danger" style="width: 80px;margin: 8px 1px -48px 14px;"><i class="fas fa-arrow-circle-left"></i> Back</a>
 </div>
     <section>
-        <div class="card">
+        <div class="card" style="position: absolute;">
             <div class="container">
                 <form name="myformuser" method="POST"  action="/auth/userlogin" onsubmit="return validateform()">
             <ul class="email-input-list">
@@ -26,9 +28,9 @@
                 <li><input class="email-input" type="password" name="u_companypassword" id="u_companypassword" placeholder="******" required></li>
             </ul>
          
-            <button class="login-btn" type="submit">Login</button>
+            <button class="login-btn" type="submit">Login <i class="fas fa-lock"></i></button>
             <h2 class="label">Don't have an account ? Create one</h2>
-            <button class="login-btn" type="submit"><a href="/usersignin" style="color: white;">Sign In</a></button>
+            <button class="login-btn" type="submit"><a href="/usersignin" style="color: white;">Sign In <i class="fas fa-unlock"></i></a></button>
 
             </form>
             </div>
@@ -37,4 +39,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
 </script>
+</body>
 </html>
