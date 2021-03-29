@@ -43,6 +43,10 @@ router.get("/chooseperson", (req, res) => {
   res.render("chooseperson");
 });
 
+router.get("/chooseadmin", (req, res) => {
+  res.render("chooseadmin");
+});
+
 router.get("/inventorychoice", (req, res) => {
   res.render("inventorychoice");
 });
