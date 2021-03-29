@@ -3,19 +3,21 @@
         <title>User Login</title>
         <link rel="stylesheet" href="/loginucss.css" />
         <script src="/loginujs.js"></script>
-
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
     </head>
 
-
+<body>
 <div id="particles-js">
+    <a href="/loginchoice" class="btn btn-danger" style="width: 80px;margin: 8px 1px -48px 14px;"><i class="fas fa-arrow-circle-left"></i> Back</a>
 </div>
     <section>
-        <div class="card">
+        <div class="card" style="position: absolute;">
             <div class="container">
-                                <form name="myformuser" method="POST" onsubmit="return validateform()">
+                <form name="myformuser" method="POST"  action="/auth/userlogin" onsubmit="return validateform()">
             <ul class="email-input-list">
                 <li class="label">Company Name</li>
-                <li><input class="email-input" type="text" name="u_companyname" id="u_companyname" placeholder="name of company" required></li>
+                <li><input class="email-input" type="text" name="u_companyname" id="u_companyname" placeholder="name of company - branch" required></li>
             </ul>
             <ul class="email-input-list">
                 <li class="label">Email</li>
@@ -25,9 +27,8 @@
                 <li class="label">Password</li>
                 <li><input class="email-input" type="password" name="u_companypassword" id="u_companypassword" placeholder="******" required></li>
             </ul>
-         
-            <button class="login-btn" type="submit">Login</button>
-                <h2 class="label">INCORRECT USERNAME OR PASSWORD</h2>
+            <h1 class="label">INCORRECT DETAILS!</h1>
+            <button class="login-btn" type="submit">Login <i class="fas fa-lock"></i></button>
 
             </form>
             </div>
@@ -36,4 +37,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
 </script>
+</body>
 </html>

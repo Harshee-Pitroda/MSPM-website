@@ -1,29 +1,35 @@
 <html>
-    <head>
-        <title>User Signup</title>
-        <link rel="stylesheet" href="/signinucss.css" />    
-    </head>
+
+<head>
+   <title>User Signup</title>
+   <link rel="stylesheet" href="/signinucss.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
 
 <body>
-    <div id="container">
-       <header>SIGN-IN</header>
-       <form action="/auth/usersignin" method="post">
-          <fieldset>
-             <br/>
-             <br><br>
-             <input type="text" name="cname" id="cname" placeholder="Company Name-Branch" required>
-             <br/><br/>
-             <input type="text" name="cemail" id="cemail" placeholder="Company Email" required>
-             <br/><br/>
-             <input type="password" name="cpass" id="cpass" placeholder="Password" required>
-             <br/><br/>
-             <label for="submit"></label>
-             <input type="submit" name="submit" id="submit" value="Sign-in">
-             <br>
-             <input type="submit" name="submit" id="submit" value="Already have an account?Login">
-          </fieldset>
-       </form>
-    </div>
- </body>
+   <a href="/loginchoice" class="btn btn-danger" style="width: 80px;margin: 8px 1px -48px 14px;"><i
+         class="fas fa-arrow-circle-left"></i> Back</a>
+   <div id="container">
+      <header>SIGN-IN</header>
+      <form action="/auth/usersignin" method="post" style="margin: -49px -11px 0 0;">
+         <fieldset>
+            <br />
+            <br><br>
+            <input type="text" name="cname" id="cname" placeholder="Company Name-Branch" required>
+            <br /><br />
+            <input type="text" name="cemail" id="cemail" placeholder="Company Email" required>
+            <br /><br />
+            <input type="password" name="cpass" id="cpass" placeholder="Password" required>
+            <br /><br />
+            <button class="btn btn-warning" type="submit">Sign in <i class="fas fa-lock"></i></button>
+            <br /><br />
+            <button class="btn btn-warning" type="submit"><a href="/userlogin" style="color: rgb(2, 2, 2);">Already have an account ? Login <i class="fas fa-unlock"></i></a></button>
+         </fieldset>
+      </form>
+   </div>
+</body>
 
- </html>
+</html>

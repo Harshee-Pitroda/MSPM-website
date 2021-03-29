@@ -53,8 +53,7 @@ exports.usersignin = async (req, res) => {
     {
       u_companyname: cname,
       u_companyemail: cemail,
-      u_companypassword: hashedp,
-      u_companybranch: cbranch,
+      u_companypassword: hashedp
     },
     (error, results) => {
       if (error) {
