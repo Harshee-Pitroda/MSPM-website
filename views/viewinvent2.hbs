@@ -8,11 +8,14 @@
 </head>
 
 <body>
+    <a href="/viewinvent" class="btn btn-danger" id="back" style="width: 80px;
+   margin: 19px 0px -10px 13px;
+"><i class="fas fa-arrow-circle-left"></i> Back</a>
   <br>
   <h1><center>Inventory List</center></h1>
   <br>
   <div class="cover">
-    <form class="flex-form" action="/auth/viewinvent"  method="post">
+    <form class="flex-form" action="/auth/viewinvent"  method="post"  style="margin: 0  0 0 500px;">
       <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?" >
       <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
     </form>  
