@@ -10,27 +10,27 @@ h1 {
 }
 
 .btn {
-  padding: 1em 1.1em 1.1em;
-  border-radius: 3px;
-  margin: 153px 20px 31px 264px;
-  color: #fbdedb;
-  background-color: #fbdedb;
-  display: inline-block;
-  background: #e74c3c;
-  -webkit-transition: 0.3s;
+  padding: 1em 1.1em 1.1em !important;
+  border-radius: 3px !important;
+  margin: 153px 20px 31px 264px !important;
+  color: #fbdedb !important;
+  background-color: #fbdedb !important;
+  display: inline-block !important;
+  background: #e74c3c !important;
+  -webkit-transition: 0.3s !important;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s;
-  font-family: sans-serif;
-  font-weight: 800;
-  font-size: 25px;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
+  transition: 0.3s !important;
+  font-family: sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 25px !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  text-decoration: none !important;
   -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
-  position: relative;
+  position: absolute !important;
 }
 .btn:hover,
 .btn:focus {
