@@ -14,6 +14,8 @@ router.post('/updateinventory',authController.updateinventory);
 
 router.post('/viewinvent',authController.viewinvent);
 
+router.post('/searchq',authController.searchq);
+
 router.post('/viewauthority',authController.viewauthority);
 
 router.post('/feedbackform',authController.feedbackform);

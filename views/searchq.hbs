@@ -16,31 +16,19 @@
 </head>
 
 <body>
+  <a href="/searchchoice" class="btn btn-danger" id="back" style="width: 80px;
+   margin: 19px 0px -23px 13px;
+"><i class="fas fa-arrow-circle-left"></i> Back</a>
   <br>
   <h1>
     <center>Quotation List</center>
   </h1>
   <br>
-  {{!-- <form class="flex-form" action="/auth/viewinvent" method="post" style="margin: 0  0 0 500px;">
-    <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?">
-    <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
-  </form> --}}
-  {{!-- <div style="margin: 0 0 0 600px;">
-    <h4> ACTIONS : </h4>
-    <div class="page">
-      <a href="#" class="r-link link text-underlined">View chart</a>
-    </div>
-    <div class="page">
-      <a href="/searchcompanyname" class="r-link link text-underlined">Search by company name</a>
-    </div>
-    <div class="page">
-      <a href="/searchprodname" class="r-link link text-underlined">Search by product name</a>
-    </div>
-        <div class="page">
-      <a href="/searchproducts" class="r-link link text-underlined">View all products</a>
-    </div>
-  </div>
-  <br> --}}
+    <form class="flex-form" action="/auth/searchq" method="post" style="margin: 0  0 0 500px;">
+      <input type="text" name="search_name" id="search_name" placeholder="Which company are you looking for?">
+      <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
+    </form>
+    <br>
   
   <table class="table table-striped" id = "datatable">
     <thead class="thead-dark">
