@@ -316,6 +316,16 @@ router.get("/viewcomplaints", (req, res) => {
   });
 });
 
+router.get("/trackvisitors", (req, res) => {
+  var selectquery = "SELECT `u_companyname`,`u_companyemail` FROM `add_user` WHERE `u_companyname` NOT IN (SELECT DISTINCT(`u_companyname`) FROM add_user INTERSECT SELECT DISTINCT(`companyabv`) FROM companydetails)";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("trackvisitors", {
+      items: rows,
+    });
+  });
+});
+
 router.get("/viewauthority", (req, res) => {
   var selectquery = "SELECT * FROM add_authority";
   var query = db.query(selectquery, function (err, rows, fields) {

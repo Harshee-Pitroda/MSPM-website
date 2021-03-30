@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <link href="/searchquotationcss.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+</head>
+
+<body>
+    <a href="/chooseadmin" class="btn btn-danger" id="back" style="width: 80px;
+   margin: 19px 0px -10px 13px;
+"><i class="fas fa-arrow-circle-left"></i> Back</a>
+  <br>
+  <h1>
+    <center>Track Visitors</center>
+  </h1>
+  <br>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Company name
+          <a href="/orderbycompasc" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
+          <a href="/orderbycompdesc" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
+        </th>
+        <th scope="col">Company Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each items as |item|}}
+      <tr class="table-pink">
+        <th scope="row">{{item.u_companyname}}</th>
+        <td><a href="mailto:{{item.u_companyemail}}" class="btn btn-dark"><i class="fas fa-envelope-square"></i> &nbsp;&nbsp;{{item.u_companyemail}}</a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+
+</html>
