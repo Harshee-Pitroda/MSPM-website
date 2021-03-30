@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 body {
-	  background:#2d3b36 url(http://www.luismruiz.com/img/blured.jpg)no-repeat center center fixed;
+	  background:#2d3b36 url(http://www.luismruiz.com/img/blured.jpg)no-repeat center center fixed !important;
   	-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -9,16 +9,16 @@ body {
 }
 
 form {
-    margin-left:auto;
-    margin-right:auto;
-    width: 343px;
-    height: 333px;
-    padding:30px;
-    border: 1px solid rgba(0,0,0,.2);
+    margin-left:auto !important;
+    margin-right:auto !important;
+    width: 343px !important;
+    height: 333px !important;
+    padding:30px !important;
+    border: 1px solid rgba(0,0,0,.2) !important;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    -moz-background-clip: padding;
+    -moz-background-clip: padding ;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     background: rgba(0, 0, 0, 0.5); 
@@ -51,22 +51,22 @@ textarea{
 }
 
 input {
-    width: 300px;
-    height: 48px;
-    border: 1px solid rgba(255,255,255,.4);
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+    width: 300px !important;
+    height: 48px !important;
+    border: 1px solid rgba(255,255,255,.4) !important;
+    -moz-border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    border-radius: 4px !important;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box; 
-    display:block;
+    display:block !important;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size:18px;
-    color:#fff;
-    padding-left:20px;
-    padding-right:20px;
-    margin-bottom:20px;
+    font-size:18px !important;
+    color:#fff !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+    margin-bottom:20px !important;
 }
 
 input[type=submit] {
@@ -112,7 +112,7 @@ input:focus, textarea:focus {
 	  overflow: hidden; 
 }
 
-.btn {
+.btnown {
 	  width: 138px;
 	  height: 44px;
 	  -moz-border-radius: 4px;
@@ -136,7 +136,7 @@ input:focus, textarea:focus {
     color: #e1e1e1;
 }
 
-.btn:hover {
+.btnown:hover {
     border: 1px solid #253737;
     text-shadow: #333333 0 1px 0;
     background: #416b68;
@@ -149,7 +149,7 @@ input:focus, textarea:focus {
     color: #fff;
  }
 
-.btn:active {
+.btnown:active {
     margin-top:1px;
     text-shadow: #333333 0 -1px 0;
     border: 1px solid #253737;
