@@ -1,20 +1,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATTENDANCE</title>
+  <title>SEARCH</title>
   <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/searchchoice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    </style>
 </head>
 
 <body>
   <!-- Hover #1 -->
   <div class="box-1">
-    <button class="btn btn-one" type="button"><a href="/searchproducts">SEARCH THROUGH PRODUCTS</a></button>
+        <a href="/chooseadmin" class="btn btn-danger" id="back" style="width: 100px;
+   margin: -288px 1421px -14px 13px;height:40px;
+"><i class="fas fa-arrow-circle-left"></i> Back</a>
+        <a href="/searchproducts" class="btn btn-success" id="back" style="height: 60px;
+   margin: 19px 0px -10px 13px;position:absolute;
+"><i class="fas fa-search"></i> SEARCH THROUGH PRODUCTS</a>
+    {{!-- <button class="btn btn-primary" type="button" style="height: 40px;"><a href="/searchproducts">SEARCH THROUGH PRODUCTS</a></button> --}}
   </div>
 
   <!-- Hover #2 -->
   <div class="box-2">
-    <button class="btn btn-two" type="button"><a href="/searchq">SEARCH THROUGH QUOTATIONS</a></button>
+            <a href="/searchq" class="btn btn-warning" id="back" style="height: 60px;
+   margin: 19px 0px -10px 13px;position:absolute;
+"><i class="fas fa-search"></i> SEARCH THROUGH QUOTATIONS</a>
+    {{!-- <button class="btn btn-warning" type="button" style="height: 40px; width: 320px;"><a href="/searchq">SEARCH THROUGH QUOTATIONS</a></button> --}}
 
   </div>
 
