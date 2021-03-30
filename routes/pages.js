@@ -305,6 +305,9 @@ router.get("/quotationtable", (req, res) => {
 });
 });
 
+router.get("/testimonials", (req, res) => {
+  res.render("testimonials");
+});
 
 router.get("/viewcomplaints", (req, res) => {
   var selectquery = "SELECT * FROM complaints";
