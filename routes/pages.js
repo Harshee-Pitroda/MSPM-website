@@ -226,6 +226,17 @@ router.get("/viewcompanyoverview", (req, res) => {
   });
 });
 
+router.get("/disc", (req, res) => {
+  var selectquery = "SELECT companyabv,sum(p_qty) as cp,count(p_name) as countname FROM companyprodmultivalued GROUP BY companyabv HAVING sum(p_qty)>30";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("companyoverview", {
+      items: rows,
+    });
+  });
+});
+
+
 router.get("/orderbyprodasc", (req, res, next) => {
   console.log(req.body);
   var selectquery = "SELECT companyabv,p_name,p_price,p_qty,(p_price*p_qty) as tp FROM companyprodmultivalued ORDER BY companyabv";
