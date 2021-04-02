@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <a href="/searchchoice" class="btn btn-danger" id="back" style="width: 80px;
+    <a href="/searchproducts" class="btn btn-danger" id="back" style="width: 80px;
    margin:31px 0px -21px 13px;
 "><i class="fas fa-arrow-circle-left"></i> Back</a>
   <br>
@@ -49,23 +49,17 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Company name
-          <a href="/orderbyprodasc" class="btn btn-primary "><i class="fas fa-level-up-alt fa-xs"></i></a>
-          <a href="/orderbyproddesc" class="btn btn-danger "><i class="fas fa-level-down-alt fa-xs"></i></a>
         </th>
-        <th scope="col">Product Name</th>
-        <th scope="col">Product Price</th>
-        <th scope="col">Product Quantity</th>
-        <th scope="col">Total Price</th>
+        <th scope="col">TOTAL PRODUCTS BOUGHT</th>
+        <th scope="col">TOTAL QUANTITY BROUGHT</th>
       </tr>
     </thead>
     <tbody>
       {{#each items as |item|}}
       <tr class="table-info">
         <th scope="row">{{item.companyabv}}</th>
-        <td>{{item.p_name}}</td>
-        <td>{{item.p_price}}</td>
-        <td>{{item.p_qty}}</td>
-        <td>{{item.tp}}</td>
+        <td>{{item.countname}}</td>
+        <td>{{item.cp}}</td>
       </tr>
       {{/each}}
     </tbody>

@@ -192,6 +192,10 @@ router.get("/searchprodname", (req, res) => {
   res.render("searchprodname");
 });
 
+router.get("/companyoverview", (req, res) => {
+  res.render("companyoverview");
+});
+
 router.get("/viewinvent", (req, res) => {
   var selectquery = "SELECT * FROM inventorydetails";
   var query = db.query(selectquery, function (err, rows, fields) {
@@ -207,6 +211,16 @@ router.get("/searchproducts", (req, res) => {
   var query = db.query(selectquery, function (err, rows, fields) {
     if (err) throw err;
     res.render("searchproducts", {
+      items: rows,
+    });
+  });
+});
+
+router.get("/viewcompanyoverview", (req, res) => {
+  var selectquery = "SELECT companyabv,sum(p_qty) as cp,count(p_name) as countname FROM companyprodmultivalued GROUP BY companyabv";
+  var query = db.query(selectquery, function (err, rows, fields) {
+    if (err) throw err;
+    res.render("companyoverview", {
       items: rows,
     });
   });
