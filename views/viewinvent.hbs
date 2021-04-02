@@ -18,6 +18,9 @@
   <h1>
     <center>Inventory List</center>
   </h1>
+  {{!-- <h1>
+    <center>TOTAL NUMBER OF PRODUCTS IN THE INVENTORY : {{#each items as |item|}}{{item.countp}}{{/each}}</center>
+  </h1> --}}
   <br>
     <form class="flex-form" action="/auth/viewinvent" method="post" style="margin: 0  0 0 500px;">
       <input type="text" name="search_name" id="search_name" placeholder="Which product are you looking for?">
@@ -36,6 +39,9 @@
     </div>
     <div class="page">
       <a href="/nopb100and200" class="r-link link text-underlined">Products items between 100 and 200</a>
+    </div>
+    <div class="page">
+      <a href="/totalinventprod" class="r-link link text-underlined">Total products in the Inventory</a>
     </div>
     <div class="page">
       <a href="/pmax" class="r-link link text-underlined">Product with maximum price</a>
@@ -73,7 +79,7 @@
           <td>{{item.p_totalprice}}</td>
           <td>
             <a href="/updateinventory" class="btn btn-primary ">Update <i class="fas fa-pen"></i></a>
-            <a href="/deleteitem/{{item.p_name}}" class="btn btn-danger ">Delete <i class="fas fa-trash-alt"></i></a>
+            {{!-- <a href="/deleteitem/{{item.p_name}}" class="btn btn-danger ">Delete <i class="fas fa-trash-alt"></i></a> --}}
           </td>
         </tr>
         {{/each}}

@@ -100,6 +100,10 @@ router.get("/viewinvent2", (req, res) => {
   res.render("viewinvent2");
 });
 
+router.get("/viewinvent3", (req, res) => {
+  res.render("viewinvent3");
+});
+
 router.get("/feedbackform", (req, res) => {
   res.render("feedbackform");
 });
@@ -536,6 +540,22 @@ router.get("/nopb100and200", (req, res, next) => {
     });
 });
 
+router.get("/totalinventprod", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT count(*) as countp FROM inventorydetails";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent3", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
 
 router.get("/pmax", (req, res, next) => {
   console.log(req.body);
@@ -588,18 +608,18 @@ router.get("/deleteauth/:a_name", (req, res, next) => {
   });
 });
 
-router.get("/deleteitem/:p_name", (req, res, next) => {
-  let pname = req.params.p_name;
+router.get("/deletecomplaint/:c_complaint", (req, res, next) => {
+  let pname = req.params.c_complaint;
   var add1query =
-    "DELETE FROM inventorydetails WHERE p_name = ?";
+    "DELETE FROM complaints WHERE c_complaint = ?";
   var query = db.query(add1query, [pname], function (err, rows, result) {
     if (err) {
       console.log(err);
     } else {
-      var selectquery = "SELECT * FROM inventorydetails";
+      var selectquery = "SELECT * FROM complaints";
       var query = db.query(selectquery, function (err, rows, fields) {
         if (err) throw err;
-        res.render("viewinvent", {
+        res.render("viewcomplaints", {
           items: rows,
         });
       });

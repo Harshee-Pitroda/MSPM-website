@@ -4,10 +4,11 @@
   <link href="/searchquotationcss.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <title>VIEW COMPLAINTS</title>
 </head>
 
 <body>
-    <a href="/chooseadmin" class="btn btn-danger" id="back" style="width: 80px;
+  <a href="/chooseadmin" class="btn btn-danger" id="back" style="width: 80px;
    margin: 19px 0px -10px 13px;
 "><i class="fas fa-arrow-circle-left"></i> Back</a>
   <br>
@@ -16,7 +17,7 @@
   </h1>
   <br>
   <div class="cover">
-    <form class="flex-form" action="/auth/viewcomplaints" method="post"  style="margin: 0  0 0 500px;">
+    <form class="flex-form" action="/auth/viewcomplaints" method="post" style="margin: 0  0 0 500px;">
       <input type="text" name="search_name" id="search_name" placeholder="Which company are you looking for?">
       <button class="btn btn-primary " type="submit" style="cursor:pointer;"><i class="fas fa-search"></i></button>
     </form>
@@ -32,15 +33,20 @@
         <th scope="col">Company Email</th>
         <th scope="col">Complaint</th>
         <th scope="col">Date of complaint</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       {{#each items as |item|}}
       <tr class="table-secondary">
         <th scope="row">{{item.c_companyname}}</th>
-        <td><a href="mailto:{{item.c_companyemail}}" class="btn btn-dark"><i class="fas fa-envelope-square"></i> &nbsp;&nbsp;{{item.c_companyemail}}</a></td>
-        <td  style="width: 480px;">{{item.c_complaint}}</td>
+        <td><a href="mailto:{{item.c_companyemail}}" class="btn btn-dark"><i class="fas fa-envelope-square"></i>
+            &nbsp;&nbsp;{{item.c_companyemail}}</a></td>
+        <td style="width: 480px;">{{item.c_complaint}}</td>
         <td>{{item.c_dateofcomplaint}}</td>
+        <td>
+          <a href="/deletecomplaint/{{item.c_complaint}}" class="btn btn-danger ">Delete <i class="fas fa-trash-alt"></i></a>
+        </td>
       </tr>
       {{/each}}
     </tbody>
