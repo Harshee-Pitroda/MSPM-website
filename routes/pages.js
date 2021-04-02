@@ -488,6 +488,55 @@ router.get("/nopless10", (req, res, next) => {
     });
 });
 
+router.get("/nopb10and50", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts BETWEEN 10 AND 50";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/nopb50and100", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts BETWEEN 50 AND 100";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+router.get("/nopb100and200", (req, res, next) => {
+  console.log(req.body);
+    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts BETWEEN 100 AND 200";
+    var query = db.query(selectquery, function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        res.render("viewinvent2", {
+          items: rows,
+        });
+      }
+      console.log(rows);
+    });
+});
+
+
 router.get("/pmax", (req, res, next) => {
   console.log(req.body);
     var selectquery = "SELECT * FROM inventorydetails WHERE p_price=(SELECT MAX(p_price) FROM inventorydetails)";
