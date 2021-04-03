@@ -510,7 +510,7 @@ router.get("/makeq3", (req, res) => {
 
 router.get("/nopless10", (req, res, next) => {
   console.log(req.body);
-    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts < 10";
+    var selectquery = "SELECT * FROM inventorydetails USE INDEX(numberofproducts) WHERE p_noproducts < 10;";
     var query = db.query(selectquery, function (err, rows, fields) {
       if (err) {
         console.log(err);
@@ -526,7 +526,7 @@ router.get("/nopless10", (req, res, next) => {
 
 router.get("/nopb10and50", (req, res, next) => {
   console.log(req.body);
-    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts BETWEEN 10 AND 50";
+    var selectquery = "SELECT * FROM inventorydetails USE INDEX(numberofproducts) WHERE p_noproducts BETWEEN 10 AND 50";
     var query = db.query(selectquery, function (err, rows, fields) {
       if (err) {
         console.log(err);
@@ -542,7 +542,7 @@ router.get("/nopb10and50", (req, res, next) => {
 
 router.get("/nopb50and100", (req, res, next) => {
   console.log(req.body);
-    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts BETWEEN 50 AND 100";
+    var selectquery = "SELECT * FROM inventorydetails USE INDEX(numberofproducts) WHERE p_noproducts BETWEEN 50 AND 100";
     var query = db.query(selectquery, function (err, rows, fields) {
       if (err) {
         console.log(err);
@@ -558,7 +558,7 @@ router.get("/nopb50and100", (req, res, next) => {
 
 router.get("/nopb100and200", (req, res, next) => {
   console.log(req.body);
-    var selectquery = "SELECT * FROM inventorydetails WHERE p_noproducts BETWEEN 100 AND 200";
+    var selectquery = "SELECT * FROM inventorydetails USE INDEX(numberofproducts) WHERE p_noproducts BETWEEN 100 AND 200";
     var query = db.query(selectquery, function (err, rows, fields) {
       if (err) {
         console.log(err);
