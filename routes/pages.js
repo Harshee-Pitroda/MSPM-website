@@ -22,6 +22,14 @@ router.get("/aboutus", (req, res) => {
   res.render("aboutus");
 });
 
+router.get("/chatbox", (req, res) => {
+  res.render("chatbox");
+});
+
+router.get("/lettodev", (req, res) => {
+  res.render("lettodev");
+});
+
 router.get("/meetthedirectors", (req, res) => {
   res.render("meetthedirectors");
 });

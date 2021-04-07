@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: lightgoldenrodyellow;
+  }
+  .paper {
+    position: absolute;
+    height: 550px;
+    width: 450px;
+    background: rgba(255,255,255,0.9);
+    left: 15%;
+    margin-top:8%;
+    box-shadow: 0px 0px 5px 0px #888;
+  }
+  .paper::before {
+    content: '';
+    position: absolute;
+    left: 45px;
+    height: 100%;
+    width: 2px;
+    background: rgba(255,0,0,0.4);
+  }
+  .lines {
+    margin-top: 40px;
+    height: calc(100% - 40px);
+    width: 100%;
+    background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
+  }
+  .Lettertext {
+    position: absolute;
+    top: 65px;
+    left: 55px;
+    bottom: 10px;
+    right: 10px;
+    line-height: 25px;
+    font-family: 'Bad Script', cursive;
+    font-weight:bold;
+    overflow: hidden;
+    outline: none;
+  }
+  
+  td
+  {
+      padding-left:15px;
+  }
+  
+  .topgap
+  {
+      margin-top:10%;
+  }
+  
+  .buttonSubmit
+  {
+      margin-top:10px;
+      margin-left:8px;
+  }

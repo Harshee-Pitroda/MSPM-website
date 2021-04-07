@@ -1,0 +1,91 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter To The Developers</title>
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/todocss.css">
+</head>
+
+<body>
+  <div class="col-lg-12 col-md-12" ng-app="" ng-init="firstName='Tvisha Modi, Harshee Pitroda and Juhi Patel';
+         place='India';
+         profession='Web Developers';
+         company='MSPM';
+         message='Write a letter to the developers ';
+         email='MSPMproject@gmail.com'">
+    <div class="col-lg-6 col-md-6 col-sm-6 topgap">
+
+      <center style="font-family: 'Lobster', cursive;">
+        <h1>Letter To The Developers</h1>
+      </center>
+
+      <table width="100%">
+        <tr>
+          <td>
+            <label for="firstName">Name:</label>
+            <input type="text" class="form-control col-lg-3 col-md-3 col-sm-3 col-xs-3"
+              placeholder="Please Enter your First Name" ng-model="firstName" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="email">Email ID:</label>
+            <input type="email" class="form-control col-lg-3 col-md-3 col-sm-3 col-xs-3"
+              placeholder="Please enter your Email ID" ng-model="email" required />
+          </td>
+          <td>
+            <label for="place">Country:</label>
+            <input type="text" class="form-control col-lg-3 col-md-3 col-sm-3 col-xs-3"
+              placeholder="Please enter your Country" ng-model="place" required />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="company">Company:</label>
+            <input type="text" class="form-control col-lg-3 col-md-3 col-sm-3 col-xs-3"
+              placeholder="Please enter your Comapany Name" ng-model="company" required />
+          </td>
+          <td>
+            <label for="profession">Profession:</label>
+            <input type="text" class="form-control col-lg-3 col-md-3 col-sm-3 col-xs-3"
+              placeholder="Please enter your Profession" ng-model="profession" required />
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <label for="message">Message:</label>
+            <textarea class="form-control" rows="5" id="message" ng-model="message"></textarea>
+          </td>
+        </tr>
+      </table>
+
+      <button type="button" class="btn btn-danger btn-block buttonSubmit">Enter</button>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="paper">
+        <div class="lines">
+          <div class="Lettertext" spellcheck="false">
+            {{ firstName='Tvisha Modi, Harshee Pitroda and Juhi Patel' }}
+            Hello Sir/ Ma'am, <br /><br />
+            This is {{ var1 }}. We are from {{place}}.
+            <br /><br />
+            We are {{profession}} and have worked for {{company}}.
+            <br /><br />
+            {{message}}
+            <br /><br />
+            Like our Work? Share your Love, gimme us a heart &#9829;&#9829;&#9829; <br />
+            You can reach us back on {{email}}.
+            <br /><br />
+            Thanks and Regards,<p>{{ firstName }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
