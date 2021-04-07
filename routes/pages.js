@@ -235,7 +235,7 @@ router.get("/viewcompanyoverview", (req, res) => {
 });
 
 router.get("/disc", (req, res) => {
-  var selectquery = "SELECT companyabv,sum(p_qty) as cp,count(p_name) as countname FROM companyprodmultivalued GROUP BY companyabv HAVING sum(p_qty)>30";
+  var selectquery = "SELECT companyabv,sum(p_qty) as cp,count(p_name) as countname FROM companyprodmultivalued GROUP BY companyabv HAVING sum(p_qty)>100";
   var query = db.query(selectquery, function (err, rows, fields) {
     if (err) throw err;
     res.render("companyoverview", {
