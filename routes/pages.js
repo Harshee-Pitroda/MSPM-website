@@ -22,6 +22,10 @@ router.get("/aboutus", (req, res) => {
   res.render("aboutus");
 });
 
+router.get("/quotationadded", (req, res) => {
+  res.render("quotationadded");
+});
+
 router.get("/chatbox", (req, res) => {
   res.render("chatbox");
 });
