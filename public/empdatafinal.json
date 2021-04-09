@@ -1,0 +1,76 @@
+{
+  "page": 1,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+        "name": "SONU KUMAR",
+        "address": "RABALE",
+        "gender": "MALE",
+        "designation": "WELDER",
+        "dob": "05-09-1990",
+        "bg": "B"
+    },
+    {
+        "name": "DEEPAK SINGH",
+        "address": "MAHAPE",
+        "gender": "MALE",
+        "designation": "FITTER",
+        "dob": "20--05-1987",
+        "bg": "AB"
+    },
+    {
+        "name": "RAJKUMAR BHARTI",
+        "address": "TURBHE",
+        "gender": "MALE",
+        "designation": "HELPER",
+        "dob": "08-06-1985",
+        "bg": "O"
+    },
+    {
+        "name": "MUNNA YADAV",
+        "address": "GHANSOLI",
+        "gender": "MALE",
+        "designation": "PAINTER",
+        "dob": "15-05-1992 ",
+        "bg": "AB"
+    },
+    {
+        "name": "TIRTHARAJ YADAV",
+        "address": "RABALE",
+        "gender": "MALE",
+        "designation": "FITTER",
+        "dob": "03-02-1991",
+        "bg": "A"
+    },
+    {
+        "name": "MAHINDRA YADAV",
+        "address": "RABALE",
+        "gender": "MALE",
+        "designation": "PAINTER",
+        "dob": "16-02-1990",
+        "bg": "B"
+    },
+    {
+        "name": "KAMLESH YADAV",
+        "address": "DIGHA",
+        "gender": "MALE",
+        "designation": "HELPER",
+        "dob": "11-03-1993",
+        "bg": "A"
+    },
+    {
+        "name": "VIVEK RAI",
+        "address": "RABALE",
+        "gender": "MALE",
+        "designation": "HELPER",
+        "dob": "25-06-1987",
+        "bg": "A"
+    }
+  ],
+  "support": {
+    "url": "https://reqres.in/#support-heading",
+    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+  }
+}
