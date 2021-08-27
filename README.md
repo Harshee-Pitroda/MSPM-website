@@ -35,5 +35,5 @@ This database management is a live project, made for the company ‘Modi Special
 ![image](https://user-images.githubusercontent.com/73131499/131075840-0ccb4e0d-d1b8-44ca-8253-54b80b35cf81.png)
 ![image](https://user-images.githubusercontent.com/73131499/131075857-5899b483-ce14-4463-9370-f57bc01ba4b5.png)
 
-ER diagram
 ![image](https://user-images.githubusercontent.com/73131499/131076267-d0a9ae54-4c40-495e-aa88-180ff3c12d7a.png)
+ER diagram
