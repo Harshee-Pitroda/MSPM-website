@@ -1,6 +1,8 @@
 This database management is a live project, made for the company ‘Modi Special Purpose Machines Pvt. Ltd.’. Modi Special Purpose Machines is a private company, who manufactures machines of soaps, detergents and plastic. As they manufacture machines, the company needs to make multiple quotations, before getting the orders. This website digitizes the process of making the quotations, provides them a platform to update their inventory regularly, search through various quotations, view complaints, reply to complaints personally via emailing the companies, tracking visitors visiting the general website and also having a section for the employee data.
 ![image](https://user-images.githubusercontent.com/73131499/131075550-f0c93f94-ac20-4be5-a572-84f30956b791.png) ![image](https://user-images.githubusercontent.com/73131499/131075564-5c7fd518-6c1b-4ab9-b0fd-a6c7758ef66e.png)
+
 ![image](https://user-images.githubusercontent.com/73131499/131075600-cd885ef8-7f0e-4cc7-9db9-1c45cf607604.png)
+![image](https://user-images.githubusercontent.com/73131499/131076191-e4add355-c2b5-40d2-a80e-b3ca7ea241e5.png)
 
 ![image](https://user-images.githubusercontent.com/73131499/131075607-ae73b559-92f4-4ce1-9862-34b438cb0219.png)
 ![image](https://user-images.githubusercontent.com/73131499/131075619-eaaffa0e-4644-4522-842c-6e599602ca5e.png)
